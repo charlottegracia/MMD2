@@ -6,7 +6,6 @@ const apiUserCredentials = {
 
 const id = 10;
 
-
 getDataFromWP();
 
 function getDataFromWP() {
@@ -31,10 +30,10 @@ function getDataFromWP() {
 
 function createPage() {
     console.log(`yay token: ${window.localStorage.getItem("authToken")}`);
-    tissemand();
+    juhu();
 }
 
-function tissemand() {
+function juhu() {
     fetch(`${apiUrl}posts?status=private&categories=${id}&per_page=50`, {
         headers: {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
