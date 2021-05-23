@@ -39,6 +39,8 @@ function createPage() {
         drawKatteSomSoegerHjem();
     } else if (url.indexOf('kat.html') > -1) {
         drawCat();
+    } else {
+        drawFrontpage();
     }
 }
 
@@ -74,8 +76,26 @@ function drawKatteSomSoegerHjem() {
 }
 
 function drawCat() {
-    let text = "";
-    text += `<h1>kattefar</h1>`;
-    document.querySelector('main').innerHTML = text;
-    //split url, get data, compare end of url with data[i].acf.navn
+    const url = window.location.href;
+    let urlSplit = url.split('?');
+    fetch(`${apiUrl}posts?status=private&categories=${id}&per_page=50`, {
+        headers: {
+            'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
+        }
+    }) //specifies the url to fetch() method with the API key
+    .then(response => response.json()) //converts response to JSON object
+    .then(data => { //passing data through arrow function
+        console.log(data);
+        data.forEach(kat => {
+            if (urlSplit[1] == kat.acf.navn) {
+                console.log("jubiii");
+                let text = "";
+                text += `
+                <h1>${kat.acf.navn}</h1>
+                <img class="katImg" src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
+                `;
+                document.querySelector('main').innerHTML = text;
+            }
+         });
+    })
 }

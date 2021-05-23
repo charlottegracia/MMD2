@@ -87,3 +87,17 @@ nav li a:hover {color: var(--white);}
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+main {
+    margin: 0 200px;
+}
+
+.katImg {
+    width: 25vw;
+}
+
+footer {
+    border-top: solid 1px var(--black);
+    background-color: var(--green);
+    height: 200px;
+}
