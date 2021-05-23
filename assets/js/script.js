@@ -42,6 +42,18 @@ function createPage() {
     }
 }
 
+function drawFrontpage() {
+    let text = "";
+    text += `<h1>forside</h1>`;
+    document.querySelector('main').innerHTML = text;
+}
+
+function drawAdopter() {
+    let text = "";
+    text += `<h1>adopter</h1>`;
+    document.querySelector('main').innerHTML = text;
+}
+
 function drawKatteSomSoegerHjem() {
     fetch(`${apiUrl}posts?status=private&categories=${id}&per_page=50`, {
         headers: {
@@ -61,22 +73,9 @@ function drawKatteSomSoegerHjem() {
     })
 }
 
-function drawFrontpage() {
-    let text = "";
-    text += `<h1>forside</h1>`;
-    document.querySelector('main').innerHTML = text;
-}
-
-function drawAdopter() {
-    let text = "";
-    text += `<h1>adopter</h1>`;
-    document.querySelector('main').innerHTML = text;
-}
-
 function drawCat() {
-
     let text = "";
     text += `<h1>kattefar</h1>`;
     document.querySelector('main').innerHTML = text;
-
+    //split url, get data, compare end of url with data[i].acf.navn
 }
