@@ -46,8 +46,8 @@ function createPage() {
 
 function drawFrontpage() {
     let text = "";
-    text += `<h1>forside</h1>`;
-    document.querySelector('main').innerHTML = text;
+    //text += `<h1>Nordsjællands Kattehjælp</h1>`;
+    //document.querySelector('main').innerHTML = text;
 }
 
 function drawAdopter() {

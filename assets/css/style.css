@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 html {
     font-family: 'Open Sans', sans-serif;
 }
@@ -6,90 +8,73 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.5;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 :root {
 	--black: rgba(25, 28, 39, 100);
-	--green: #83b374;
-	--lightgreen: #c6dfbf;
-	--red: #FFFAFA;
-	--white: #FFFFFF;
-	--darkGrey: #707070;
-  }
+	--green: #7daf71;
+	--darkgreen: #667b68;
+	--blue: #80a2a6;
+    --darkblue: #346d7e;
+	--white: #f2f2f2;
+}
 
 header {
 	background-color:var(--green);
+    padding: 5px;
 }
 
-header img {
-	display: block;	
-	margin: 0 auto;
-    padding: 10px 0 0 0;
-	width: 10vw;
+header nav a img {
+    display: inline-block;
+	width: 7.5vw;
+    padding: 0 2vw;
+} 
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
 	list-style-type: none;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-bottom: var(--black) 1px solid;
-    overflow: hidden;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-nav ul li {
-    padding: 10px 0 10px 0;
+    font-size: 25px;
 }
 
 nav ul li a {
-	height: 30px;
-	margin: 0px 20px;
-	color: var(--black);
 	text-decoration: none;
+    color: var(--white);
+    padding: 0 2vw;
 }
 
-nav li a:hover {color: var(--white);}
-
-
-/*  :(   */
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-.dropdown-content a {
-    float: none;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    margin: 0;
-    font-size: 14px;
-}
-  
-.dropdown-content a:hover {
-    background-color: var(--lightgreen);
-    color: var(--black);
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+nav li a:hover {border-bottom: solid 1px var(--white);}
 
 main {
     margin: 0 200px;
+}
+
+main h1 {
+    color: var(--darkgreen);
+    text-align: center;
+    padding: 15px;
+}
+
+main section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section img {
+    width: 15vw;
+}
+
+main section a {
+    margin: 10px;
+    padding: 70px;
+    color: var(--white);
+    background-color: var(--darkblue);
 }
 
 .katImg {
@@ -97,7 +82,9 @@ main {
 }
 
 footer {
-    border-top: solid 1px var(--black);
-    background-color: var(--green);
-    height: 200px;
+    background-color: var(--darkgreen);
+    color: var(--white);
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
 }
