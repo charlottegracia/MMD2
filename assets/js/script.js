@@ -53,7 +53,7 @@ function createPage() {
 
 function drawFrontpage(data) {
     let text = "";
-    text += `
+    /*text += `
     <h1>Nordsjællands Kattehjælp</h1>
         <section>
             <a href="adopter.html">
@@ -84,7 +84,7 @@ function drawFrontpage(data) {
             </a>
         </section>
     `;
-    document.querySelector('main').innerHTML = text;
+    document.querySelector('main').innerHTML = text; */
 }
 
 function drawAdopter(data) {

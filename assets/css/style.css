@@ -20,8 +20,18 @@ body {
 	--white: #f2f2f2;
 }
 
+.green          {background-color: var(--green);}
+.darkgreen      {background-color: var(--darkgreen);}
+.blue           {background-color: var(--blue);}
+.darkblue       {background-color: var(--darkblue);}
+.white          {background-color: var(--white);}
+.greenText      {color: var(--green);}
+.darkgreenText  {color: var(--darkgreen);}
+.blueText       {color: var(--blue);}
+.darkblueText   {color: var(--darkblue);}
+.whiteText      {color: var(--white);}
+
 header {
-	background-color:var(--green);
     padding: 5px;
 }
 
@@ -38,9 +48,9 @@ header nav a img {
 
 header nav a h1 {
     font-size: 20px;
-    color: var(--white);
     display: inline-block;
     justify-content: center;
+    color: var(--white);
 }
 
 nav {
@@ -62,35 +72,47 @@ nav ul li {
 nav ul li a {
 	text-decoration: none;
     color: var(--white);
+    display: inline-block;
 }
 
-nav li a:hover {border-bottom: solid 1px var(--white);}
+nav ul li a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #f2f2f2; 
+    transform: scaleX(0);  
+    transition: transform 300ms ease-in-out;
+}
+
+nav ul li a:hover:after { transform: scaleX(1); }
+
+/*nav li a:hover {border-bottom: solid 1px var(--white);}*/
 
 main {
-    margin: 0 10%;
+    margin: 0;
+    padding: 0;
 }
 
 main h1 {
     color: var(--darkgreen);
     text-align: center;
     font-size: 50px;
-    padding: 15px;
-    margin: 0 10%;
+    padding: 25px;
+    margin: 0;
 }
 
 main section {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem;
+    margin-bottom: 50px;
     justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 17vw);
+    grid-template-rows: repeat(2, 17vw);
+    grid-gap: 1vw;
 }
 
 main section a {
     text-decoration: none;
     color: var(--white);
     background-color: var(--darkblue);
-    width: 23%;
-    margin: 10px;
 }
 
 main section a h2 {
