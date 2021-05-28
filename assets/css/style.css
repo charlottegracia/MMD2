@@ -44,8 +44,8 @@ header nav a {
 }
 
 header nav a img {
-	width: 5vw;
-    padding: 0 2vw;
+	width: 3.5vw;
+    padding: 0 1vw;
 } 
 
 header nav a h1 {
@@ -106,10 +106,43 @@ main section {
     margin-bottom: 50px;
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(4, 17vw);
-    grid-template-rows: repeat(2, 17vw);
+    grid-template-columns: repeat(4, 15vw);
+    grid-template-rows: repeat(2, 15vw);
     grid-gap: 1vw;
 }
+
+@media screen and (max-width: 812px) {
+    main section {
+        margin-bottom: 20px;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 20vw);
+        grid-template-rows: repeat(4, 20vw);
+        grid-gap: 1vw;
+    }
+}
+
+@media screen and (min-width: 813px) and (max-width: 1024px) {
+    main section {
+        margin-bottom: 20px;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 30vw);
+        grid-template-rows: repeat(4, 20vw);
+        grid-gap: 1vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    main section {
+        margin-bottom: 20px;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(4, 17vw);
+        grid-template-rows: repeat(2, 17vw);
+        grid-gap: 1vw;
+    }
+} 
 
 main section a {
     text-decoration: none;
@@ -120,12 +153,16 @@ main section a {
 main section a h2 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.2em;
+    padding-top: 30%;
+    margin: 0;
 }
 
 main section a h3 {
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
 }
 
 main section a img {
