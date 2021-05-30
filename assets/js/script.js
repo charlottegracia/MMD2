@@ -4,7 +4,9 @@ const apiUserCredentials = {
     password: "API-key-1234#!",
 };
 
-const id = 27;
+const katId = 27;
+const stockImagesId = 28;
+const samarbejdspartnereId = 29;
 
 getDataFromWP();
 
@@ -31,7 +33,7 @@ function getDataFromWP() {
 function createPage() {
     const url = window.location.href;
     console.log(`yay token: ${window.localStorage.getItem("authToken")}`);
-    fetch(`${apiUrl}posts?status=private&categories=${id}&per_page=50`, {
+    fetch(`${apiUrl}posts?status=private&categories=${katId}&per_page=50`, {
         headers: {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
@@ -40,18 +42,27 @@ function createPage() {
     .then(data => { //passing data through arrow function
         console.log(data);
         drawNav();
-        if (url.indexOf('index.html') > -1) {
-            drawFrontpage(data);
-        }   else if (url.indexOf('adopter.html') > -1) {
+        if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
-        } else if (url.indexOf('kat.html') > -1) {
+        } else if (url.indexOf('kat-i-noed') > -1) {
+            drawKatINoed();
+        } else if (url.indexOf('kat') > -1) {
             drawCat(data);
-        } else if (url.indexOf('samarbejde.html') > -1) {
+        } else if (url.indexOf('stoet-os') > -1) {
+            drawStoetOs();
+        } else if (url.indexOf('foreningen') > -1) {
+            drawForeningen();
+        } else if (url.indexOf('samarbejde') > -1) {
             drawSamarbejdspartnere();
-        } else {
+        } else if (url.indexOf('kontakt') > -1) {
+            drawKontakt();
+        } else if (url.indexOf('index.html') > -1){
             drawFrontpage(data);
         }
         drawFooter();
+    })
+    .catch(error => {
+        console.log(error); // logs any errors
     })
 }
 
@@ -65,22 +76,22 @@ function drawNav() {
             </a>
             <ul>
                 <li>
-                    <a href="adopter.html">Adopter</a>
+                    <a href="index.html?adopter">Adopter</a>
                 </li>
                 <li>
-                    <a href="#"">Støt os</a>
+                    <a href="index.html?stoet-os"">Støt os</a>
                 </li>
                 <li>
-                    <a href="#">Kat i nød</a>
+                    <a href="index.html?kat-i-noed">Kat i nød</a>
                 </li>
                 <li>
-                    <a href="#">Foreningen</a>
+                    <a href="index.html?foreningen">Foreningen</a>
                 </li>
                 <li>
-                    <a href="samarbejde.html">Samarbejde</a>
+                    <a href="index.html?samarbejde">Samarbejde</a>
                 </li>
                 <li>
-                    <a href="#">Kontakt</a>
+                    <a href="index.html?kontakt">Kontakt</a>
                 </li>
             </ul>
         </nav>
@@ -98,8 +109,11 @@ function drawFooter() {
 }
 
 function drawFrontpage(data) {
+    let title = "<title>Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    //meta tekst
     let text = "";
-    fetch(`${apiUrl}posts?status=private&categories=${28}&per_page=50`, {
+    fetch(`${apiUrl}posts?status=private&categories=${stockImagesId}&per_page=50`, {
         headers: {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
@@ -115,7 +129,7 @@ function drawFrontpage(data) {
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
             </a>`
         if (data[0]) {
-            text += `<a href="kat.html?${data[0].acf.navn}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[0].acf.navn}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
         } else {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
         }
@@ -126,12 +140,12 @@ function drawFrontpage(data) {
             </a>
         `;
         if (data[1]) {
-            text += `<a href="kat.html?${data[1].acf.navn}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[1].acf.navn}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
         } else {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede2.url}" alt="Kat></a>`;
         }
         if (data[2]) {
-            text += `<a href="kat.html?${data[2].acf.navn}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[2].acf.navn}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
         } else {
             text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Kat"></a>`;
@@ -143,7 +157,7 @@ function drawFrontpage(data) {
             </a>
         `;
         if (data[3]) {
-            text += `<a href="kat.html?${data[3].acf.navn}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[3].acf.navn}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
         } else {
             text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede4.url}" alt="Kat"></a>`;
@@ -157,25 +171,51 @@ function drawFrontpage(data) {
         `;
     document.querySelector('main').innerHTML = text;
     })
+    .catch(error => {
+        console.log(error); // logs any errors
+    })
 }
 
 function drawSamarbejdspartnere() {
-    console.log("HALLOOOO");
-    let text = "";
-    text += `
-    <h1>Samarbejdspartnere</h1>
-    `;
-    document.querySelector('main').innerHTML = text;
+    let title = "<title>Samarbejdspartnere og sponsorer - Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    //meta tekst
+    fetch(`${apiUrl}posts?status=private&categories=${samarbejdspartnereId}&per_page=50`, {
+        headers: {
+            'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
+        }
+    }) //specifies the url to fetch() method with the API key
+    .then(response => response.json()) //converts response to JSON object
+    .then(samarbejdspartnere => { //passing data through arrow function
+        console.log(samarbejdspartnere);
+        console.log("HALLOOOO");
+        let text = "";
+        text += `<h1>Samarbejdspartnere</h1>`;
+        samarbejdspartnere.forEach(partner => {
+            text += `
+            <a href="${partner.acf.samarbejdspartner.firmalink}" target="_blank">
+                <img src="${partner.acf.samarbejdspartner.firmalogo.url}" alt="${partner.acf.samarbejdspartner.firmanavn}">
+            </a>
+            `;
+        });
+        document.querySelector('main').innerHTML = text;
+    })
+    .catch(error => {
+        console.log(error); // logs any errors
+    })
 }
 
 function drawAdopter(data) {
+    let title = "<title>Adopter - Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    // meta tekst
     let text = "";
     text += `
     <h1>Adopter</h1>
     <h2>Katte som søger hjem</h2>
     `;
     data.forEach(kat => {
-        text += `<a href="kat.html?${kat.acf.navn}">`;
+        text += `<a href="index.html?kat?${kat.acf.navn}">`;
         text += `<h3>${kat.acf.navn}</h3>`;
         text += `</a>`;
     });
@@ -187,8 +227,12 @@ function drawCat(data) {
     let urlSplit = url.split('?');
     console.log(data);
     data.forEach(kat => {
-        if (urlSplit[1] == kat.acf.navn) {
+        if (urlSplit[2] == kat.acf.navn) {
             console.log("jubiii");
+            let title = `<title>${kat.acf.navn} - Nordsjællands Kattehjælp</title>`;
+            let metaText = `<meta name="description" content="${kat.acf.beskrivelse}">`
+            document.querySelector("head").innerHTML += title;
+            document.querySelector("head").innerHTML += metaText;
             let text = "";
             text += `
             <h1>${kat.acf.navn}</h1>
@@ -197,4 +241,30 @@ function drawCat(data) {
             document.querySelector('main').innerHTML = text;
         }
     });
+}
+
+function drawStoetOs() {
+    console.log("halli hallo");
+}
+
+function drawKatINoed() {
+    console.log("deez");
+    console.log("nuts");
+    let title = `<title>Kat i nød - Nordsjællands Kattehjælp</title>`;
+    let metaText = `<meta name="description" content="INDSÆT TEKST">`
+    document.querySelector("head").innerHTML += title;
+    document.querySelector("head").innerHTML += metaText;
+    let text = "";
+    text += `
+        <h1>Kat i nød</h1>
+    `;
+    document.querySelector('main').innerHTML = text;
+}
+
+function drawForeningen() {
+    console.log("candice");
+}
+
+function drawKontakt() {
+    console.log("i woooork at the bank");
 }
