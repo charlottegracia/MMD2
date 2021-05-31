@@ -8,9 +8,9 @@ const katId = 27;
 const stockImagesId = 28;
 const samarbejdspartnereId = 29;
 
-getDataFromWP();
+getToken();
 
-function getDataFromWP() {
+function getToken() {
     fetch('https://charlottegracia.dk/wp-json/jwt-auth/v1/token', {
         method: 'POST',
         body: JSON.stringify(apiUserCredentials),
@@ -32,7 +32,6 @@ function getDataFromWP() {
 
 function createPage() {
     const url = window.location.href;
-    console.log(`yay token: ${window.localStorage.getItem("authToken")}`);
     fetch(`${apiUrl}posts?status=private&categories=${katId}&per_page=50`, {
         headers: {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
@@ -40,7 +39,6 @@ function createPage() {
     }) //specifies the url to fetch() method with the API key
     .then(response => response.json()) //converts response to JSON object
     .then(data => { //passing data through arrow function
-        console.log(data);
         drawNav();
         if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
@@ -79,7 +77,7 @@ function drawNav() {
                     <a href="index.html?adopter">Adopter</a>
                 </li>
                 <li>
-                    <a href="index.html?stoet-os"">Støt os</a>
+                    <a href="index.html?stoet-os">Støt os</a>
                 </li>
                 <li>
                     <a href="index.html?kat-i-noed">Kat i nød</a>
@@ -102,8 +100,8 @@ function drawNav() {
 function drawFooter() {
     let text = "";
     text += `
-        <h5>info@kattehjælp.dk | Konto: reg.: 5357 konto: 0246871 | CVR nr. 123456</h5>
-        <h5>Donationer modtages på Mobilepay 12345</h5>
+        <h5>info@kattehjælp.dk | Konto: reg.: 5357 konto: 0246871 | CVR nr. 37805335</h5>
+        <h5>Donationer modtages på Mobilepay 94686</h5>
     `;
     document.querySelector('footer').innerHTML = text;
 }
@@ -111,7 +109,8 @@ function drawFooter() {
 function drawFrontpage(data) {
     let title = "<title>Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
-    //meta tekst
+    let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.">`
+    document.querySelector("head").innerHTML += metaText;
     let text = "";
     fetch(`${apiUrl}posts?status=private&categories=${stockImagesId}&per_page=50`, {
         headers: {
@@ -120,7 +119,6 @@ function drawFrontpage(data) {
     }) //specifies the url to fetch() method with the API key
     .then(response => response.json()) //converts response to JSON object
     .then(billeder => { //passing data through arrow function
-        console.log(billeder);
         text += `
         <h1>Nordsjællands Kattehjælp</h1>
         <section>
@@ -179,7 +177,8 @@ function drawFrontpage(data) {
 function drawSamarbejdspartnere() {
     let title = "<title>Samarbejdspartnere og sponsorer - Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
-    //meta tekst
+    let metaText = `<meta name="description" content="Her er en oversigt over Nordsjællands Kattehjælps samarbejdspartnere og sponsorer.">`
+    document.querySelector("head").innerHTML += metaText;
     fetch(`${apiUrl}posts?status=private&categories=${samarbejdspartnereId}&per_page=50`, {
         headers: {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
@@ -190,14 +189,18 @@ function drawSamarbejdspartnere() {
         console.log(samarbejdspartnere);
         console.log("HALLOOOO");
         let text = "";
-        text += `<h1>Samarbejdspartnere</h1>`;
+        text += `
+            <h1>Samarbejdspartnere</h1>
+            <h2>Samarbejdspartnere og sponsorer</h2>`;
+        text += `<section class="samarbejdsgrid">`;
         samarbejdspartnere.forEach(partner => {
             text += `
-            <a href="${partner.acf.samarbejdspartner.firmalink}" target="_blank">
-                <img src="${partner.acf.samarbejdspartner.firmalogo.url}" alt="${partner.acf.samarbejdspartner.firmanavn}">
-            </a>
+                <a href="${partner.acf.samarbejdspartner.firmalink}" target="_blank">
+                    <img src="${partner.acf.samarbejdspartner.firmalogo.url}" alt="${partner.acf.samarbejdspartner.firmanavn}">
+                </a>
             `;
         });
+        text += `</section>`;
         document.querySelector('main').innerHTML = text;
     })
     .catch(error => {
