@@ -56,7 +56,7 @@ function createPage() {
             drawSamarbejdspartnere();
         } else if (url.indexOf('kontakt') > -1) {
             drawKontakt();
-        } else if (url.indexOf('index.html') > -1){
+        } else {
             drawFrontpage(data);
         }
         drawFooter();
