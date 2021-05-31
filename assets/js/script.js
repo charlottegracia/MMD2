@@ -18,7 +18,7 @@ function getToken() {
             'Content-Type': 'application/JSON'
         }
     })
-    .then(response => { //create variable "response" 
+    .then(response => { 
         return response.json(); //converts response to JSON and returns it
     })
     .then(response => { //pass the variable
