@@ -21,7 +21,7 @@ function getToken() {
     .then(response => { 
         return response.json(); //converts response to JSON and returns it
     })
-    .then(response => { //pass the variable
+    .then(response => {
         window.localStorage.setItem("authToken", response.token) //saves response.token in localStorage
         createPage();
     })
