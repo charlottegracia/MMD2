@@ -10,7 +10,8 @@ body {
     line-height: 1.5;
     font-family: 'Josefin Sans', sans-serif;
     background-image: url("../images/Baggrund.png");
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 :root {

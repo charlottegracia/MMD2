@@ -122,7 +122,7 @@ function drawFrontpage(data) {
         text += `
         <h1>Nordsjællands Kattehjælp</h1>
         <section>
-            <a class="blue" href="adopter.html">
+            <a class="blue" href="index.html?adopter">
                 <h2>Adopter</h2>
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
             </a>`
