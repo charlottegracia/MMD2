@@ -258,8 +258,9 @@ function drawAdopter(data) {
                 </article>
                 <article>
                     <h2 class="greenText">Bliv plejer for Nordsjællands Kattehjælp</h2>
-                    <p>Er du interesseret i at blive plejefamilie for Nordsjællands Kattehjælp, så skal du kontakte foreningens plejeansvarlige Joan Andersen på mail: <span class="boldText">joan@kattehjaelp.dk</span>. I mailen skal du kort fortælle hvad du kan tilbyde af hjælp, hvordan du bor, din erfaring med katte osv. Du bliver herefter kontaktet enten pr. mail eller via en telefonisk samtale. Vi søger primært plejefamilier, som er bosat i Nordsjælland og København og du skal være indstillet på at åbne dit hjem, for et besøg af en repræsentant fra foreningen. Før et eventuelt samarbejde indgås, så fremsendes der en kontrakt til underskrift med nedenstående punkter.</p>
-                    <h4 class="greyText">Krav til vores plejefamilier:</h4>
+                    <p>Er du interesseret i at blive plejefamilie for Nordsjællands Kattehjælp, så skal du kontakte foreningens plejeansvarlige Joan Andersen på mail: <span class="boldText">joan@kattehjaelp.dk</span>. I mailen skal du kort fortælle hvad du kan tilbyde af hjælp, hvordan du bor, din erfaring med katte osv. Du bliver herefter kontaktet enten pr. mail eller via en telefonisk samtale.</p>
+                    <p>Vi søger primært plejefamilier, som er bosat i Nordsjælland og København og du skal være indstillet på at åbne dit hjem, for et besøg af en repræsentant fra foreningen. Før et eventuelt samarbejde indgås, så fremsendes der en kontrakt til underskrift med nedenstående punkter.</p>
+                    <h3 class="greyText">Krav til vores plejefamilier:</h3>
                     <ol>
                         <li>Du skal være fyldt 18 år og helst have lidt erfaring med katte/killinger.Dine eventuelt egne dyr skal kunne fungere socialt og harmonisk medplejekatte/killinger og du skal skal kunne fremvise gyldig attest på ateventuelt egne katte er vaccineret indenfor det seneste år samt at de er neutraliserede.</li>
                         <li>Det skal være tilladt at katten/killingen opholder sig i din bolig. Er derrestriktioner ift. art eller antal dyr der må være i din bolig, skalforeningen informeres om dette.</li>

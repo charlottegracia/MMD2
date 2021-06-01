@@ -5,13 +5,15 @@ html {
     background-image: url("../images/Baggrund.png");
     background-size: cover;
     background-attachment: fixed;
+    color: var(--grey);
 }
 
 body {
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+    line-height: 1.7;
     font-family: 'Josefin Sans', sans-serif;
+    hyphens: auto;
 }
 
 :root {
@@ -244,14 +246,64 @@ main section a img {
     grid-template-rows: auto;
 }
 
+@media screen and (max-width: 812px) {
+    html {
+        background-image: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    header nav a img {
+        width: 13vw;
+        padding: 0 1vw;
+    } 
+
+    .katteOverblikGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .adoptionAfKatte {
+        margin: -35px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .adoptionAfKatte article {
+        margin: 0;
+        padding: 0;
+    }
+
+    .adoptionAfKatte img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 813px) and (max-width: 1200px) {
+    .adoptionAfKatte {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+} 
+
 article {
     padding: 10px 25px;
 }
 
 article p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 16px;
 }
 
 .boldText {
@@ -261,7 +313,7 @@ article p {
 article ol {
     padding: 0 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 article ol li {
