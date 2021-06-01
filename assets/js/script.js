@@ -186,8 +186,6 @@ function drawSamarbejdspartnere() {
     }) //specifies the url to fetch() method with the API key
     .then(response => response.json()) //converts response to JSON object
     .then(samarbejdspartnere => { //passing data through arrow function
-        console.log(samarbejdspartnere);
-        console.log("HALLOOOO");
         let text = "";
         text += `
             <h1>Samarbejdspartnere</h1>
