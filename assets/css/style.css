@@ -331,6 +331,58 @@ article img {
     padding-top: 70px;
 }
 
+.stoet-osOverskrift{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.stoet-osUnderoverskrift {
+    text-align: center;
+    padding-top: 0;
+    margin-top: 0;
+    color: var(--darkgreen);
+    font-size: 25px;
+}
+
+.stoet-osGrid {
+    display: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.stoet-osGrid article {
+    display: inline-block;
+}
+
+.stoet-osGrid ol {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.stoet-osGrid h4, h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.stoet-osGrid li {
+    padding: 0;
+}
+
+.stoet-osGrid img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    display: inline-block;
+    padding: 20px;
+    margin: 0;
+}
+
 footer {
     background-color: var(--darkgreen);
     color: var(--white);

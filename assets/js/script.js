@@ -40,7 +40,7 @@ function createPage() {
     .then(response => response.json()) //converts response to JSON object
     .then(data => { //passing data through arrow function
         drawNav();
-        if (url.indexOf('adopter') > -1) {
+        /* if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
         } else if (url.indexOf('kat-i-noed') > -1) {
             drawKatINoed();
@@ -56,7 +56,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        }
+        } */
         drawFooter();
     })
     .catch(error => {
@@ -132,7 +132,7 @@ function drawFrontpage(data) {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
         }
         text += `
-            <a class="darkgreen" href="#">
+            <a class="darkgreen" href="index.html?stoet-os">
                 <h2>Støt os</h2>
                 <h3 class="greenText">Donation / Bliv medlem</h3>
             </a>
@@ -216,8 +216,8 @@ function drawAdopter(data) {
     .then(billeder => { //passing data through arrow function
         let title = "<title>Adopter - Nordsjællands Kattehjælp</title>";
         document.querySelector("head").innerHTML += title;
-        // meta tekst
-        console.log(billeder);
+        let metaText = `<meta name="description" content="Vi formidler kun katte og killinger, der er steriliseret/kastreret, øremærket, chippet samt ormebehandlet og vaccineret 1. gang.">`
+        document.querySelector("head").innerHTML += metaText;
         let text = "";
         text += `
         <h1>Adopter</h1>
@@ -227,7 +227,7 @@ function drawAdopter(data) {
         data.forEach(kat => {
             text +=
             `<a href="index.html?kat?${kat.acf.navn}">
-                <img src="${kat.acf.billeder.billede1.url}" alt="lol">
+                <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
                 <section>
                     <p>${kat.acf.navn} - ${kat.acf.alder}</p>
                     <p>${kat.acf.inde_ude}</p>
