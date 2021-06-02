@@ -49,7 +49,7 @@ function createPage() {
         } else if (url.indexOf('stoet-os') > -1) {
             drawStoetOs();
         } else if (url.indexOf('foreningen') > -1) {
-            drawForeningen();
+            drawForeningen(data);
         } else if (url.indexOf('samarbejde') > -1) {
             drawSamarbejdspartnere();
         } else if (url.indexOf('kontakt') > -1) {
@@ -325,8 +325,15 @@ function drawKatINoed() {
     document.querySelector('main').innerHTML = text;
 }
 
-function drawForeningen() {
+function drawForeningen(data) {
     console.log("candice");
+    console.log(data);
+    let text = "";
+    text += `
+        <h1>${data[1].acf.plejefamilie_navne}</h1>
+        <img src="${data[1].acf.billeder.billede1.url}" alt="">
+    `;
+    document.querySelector('main').innerHTML = text;
 }
 
 function drawKontakt() {
