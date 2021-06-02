@@ -40,7 +40,7 @@ function createPage() {
     .then(response => response.json()) //converts response to JSON object
     .then(data => { //passing data through arrow function
         drawNav();
-        /* if (url.indexOf('adopter') > -1) {
+        if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
         } else if (url.indexOf('kat-i-noed') > -1) {
             drawKatINoed();
@@ -56,7 +56,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        } */
+        }
         drawFooter();
     })
     .catch(error => {
@@ -308,7 +308,61 @@ function drawCat(data) {
 }
 
 function drawStoetOs() {
-    console.log("halli hallo");
+    let title = "<title>Støt os - Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er en forening drevet af engagerede dyrevenner, der alle arbejder frivilligt og ulønnet.">`
+    document.querySelector("head").innerHTML += metaText;
+    let text = `
+    <h1 class="stoet-osOverskrift">Støt os</h1>
+        <h4 class="stoet-osUnderoverskrift">- og hjælp os med at hjælpe katte i nød</h4>
+        <section class="stoet-osGrid">
+            <article>
+                <h2>Giv en donation</h2>
+                <h4>Betal med MobilePay:</h4>
+                <ol>
+                    <li>Åbn MobilePay-appen</li>
+                    <li>Tryk på 'Betal'</li>
+                    <li>Scan QR-koden via appen</li>
+                </ol>
+                <h5>ELLER indtast nummeret i din app: 94686</h5>
+                <ol>
+                    <li>Vælg ok når du får beskeden "94686 er ikke i dine kontakter"</li>
+                    <li>Swipe for betaling</li>
+                </ol>
+                <h4>Betal via bankoverførsel:</h4>
+                <address>
+                    <p>Arbejdernes Landsbank, Helsingør</p>
+                    <p>reg. <span class="boldText">5357</span> kontonr. <span class="boldText">0246871</span></p>
+                </address>
+            </article>
+            <article>
+                <img src="assets/images/mobilepay.png" alt="Mobilepay - Nordsjællands Kattehjælp">
+            </article>
+        </section>
+        <section class="stoet-osGrid extrawhite">
+            <article>
+                <h2 class="greenText">Bliv medlem</h2>
+                <p>Nordsjællands Kattehjælp er en forening drevet af engagerede dyrevenner, der alle arbejder frivilligt og ulønnet. </p>
+                <p>Du kan blive støttemedlem ved at udfylde blanketten på højre side. Medlemskabet giver adgang til foreningens generalforsamling i maj. </p>
+                <p>Der udsendes reminder om fornyelse af medlemskab hvert år i januar/februar måned via mail og Facebook. </p>
+                <p>Det er muligt at tegne erhvervsmedlemsskab og få firmalogo på hjemmesiden under samarbejdspartnere og sponsorer. Det koster kr. <span class="boldText">600,-</span> om året.</p>
+                <p>Send en mail til info@kattehjaelp.dk for nærmere aftale herom. </p>
+                <p>Ved adoption af en af vores katte eller killinger er der inkluderet et års støttemedlemsskab i formidlingsgebyret. </p>
+            </article>
+            <form>
+                <h3 class="greenText">Skriv og bliv medlem</h3>
+                    <input type="text" placeholder="Navn">
+                    <input type="text" placeholder="E-mail">
+                    <input type="number" placeholder="Telefon">
+                    <input type="text" placeholder="Adresse">
+                    <input type="text" placeholder="Postnummer og by">
+                    <textarea placeholder="Din besked.." style="height:100px"></textarea>
+                <input class="sendKnap" type="submit" value="Send">
+            </form>    
+        </section>
+    `;
+
+    document.querySelector('main').innerHTML = text;
 }
 
 function drawKatINoed() {

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 html {
-    font-family: 'Open Sans', sans-serif;
     background-image: url("../images/Baggrund.png");
     background-size: cover;
     background-attachment: fixed;
@@ -355,16 +354,12 @@ article img {
     margin: 0;
 }
 
-.stoet-osGrid article {
-    display: inline-block;
-}
-
 .stoet-osGrid ol {
     padding-top: 0;
     margin-top: 0;
 }
 
-.stoet-osGrid h4, h5 {
+.stoet-osGrid h4, .stoet-osGrid h5 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0;
     margin: 0;
@@ -375,12 +370,44 @@ article img {
 }
 
 .stoet-osGrid img {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
-    display: inline-block;
     padding: 20px;
+}
+
+.extrawhite {
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.mailText {
+    width: 95%;
+    margin-top: 10px;
+}
+
+form {
+    padding-top: 20px;
+}
+  
+input[type=text], input[type=number], textarea {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--white);
+}
+  
+input[type=submit] {
+    background-color: var(--green);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     margin: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.137);
 }
 
 footer {
