@@ -342,13 +342,14 @@ function drawCat(data) {
                 </article>
                 <article class="katPlejefamilie">
                 `;
-                if (kat.acf.plejefamilie_navne != false) {
-                    text += `<h4>Plejefamilien (${kat.acf.plejefamilie_navne}) fortæller</h4>`;
-                } else {
-                    text += `<h4>Plejefamilien fortæller</h4>`;
+                if (kat.acf.plejefamilie_navne != "" && kat.acf.plejefamilien_fortaeller != "") {
+                    text += `<h4>Plejefamilien (${kat.acf.plejefamilie_navne}) fortæller</h4>
+                    <p>${kat.acf.plejefamilien_fortaeller}</p>`;
+                } else if (kat.acf.plejefamilie_navne == "" && kat.acf.plejefamilien_fortaeller != "") {
+                    text += `<h4>Plejefamilien fortæller</h4>
+                    <p>${kat.acf.plejefamilien_fortaeller}</p>`;
                 }
                 text += `
-                    <p>${kat.acf.plejefamilien_fortaeller}</p>
                 </article>
             </section>
             `;
