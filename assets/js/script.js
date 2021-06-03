@@ -404,7 +404,7 @@ function drawCat(data) {
     }
     text += `</section></section>`;
     document.querySelector('main').innerHTML = text;
-       */ 
+       */
 }
 
 /* KODE NEDENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */

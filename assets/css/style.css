@@ -248,6 +248,7 @@ main section a img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    grid-gap: 20px;
 }
 
 .samarbejdsgrid img {
