@@ -283,7 +283,7 @@ main section a img {
 .katteOverblikGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 250px;
     grid-gap: 20px;
 }
 
@@ -510,8 +510,8 @@ input[type=submit] {
 
 .katInfo h2 {
     color: var(--green);
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin-top: 20px;
 }
 
 .katInfo ul {
@@ -521,7 +521,6 @@ input[type=submit] {
 
 .katBeskrivelse h3 {
     color: var(--blue);
-
 }
 
 .katPlejefamilie h4 {
@@ -531,7 +530,7 @@ input[type=submit] {
 .mySlides { /* Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
     display: none;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -550,6 +549,16 @@ input[type=submit] {
     color: var(--grey);
     margin: auto;
     font-size: 30px;
+}
+
+.flereKatte {
+    background-color: var(--white);
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+.flereKatte h2 {
+    margin: 10px;
 }
 
 /* FOOTER */

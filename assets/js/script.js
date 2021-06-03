@@ -232,7 +232,8 @@ function drawAdopter(data) {
                     <p>${kat.acf.navn} - ${kat.acf.alder}</p>
                     <p>${kat.acf.inde_ude}</p>
                 </section>
-            </a>`;
+            </a>
+            `;
         });
         text += `</section>`;
         text += `
@@ -362,8 +363,9 @@ function drawCat(data) {
             `;
         }
     });
+
     text += `
-        <section>
+        <section class ="flereKatte">
         <h2>Se også</h2>
         <section class="katteOverblikGrid">`;
     for (let i = 0; i < 4; i++) {
@@ -372,14 +374,37 @@ function drawCat(data) {
                 <img src="${data[i].acf.billeder.billede1.url}" alt="${data[i].acf.navn}">
                 <section>
                     <p>${data[i].acf.navn} - ${data[i].acf.alder}</p>
-                    <p>${data[i].acf.miljo}</p>
+                    <p>${data[i].acf.inde_ude}</p>
                 </section>
-            </a>
-        
+            </a> 
     `;
     }
     text += `</section></section>`;
     document.querySelector('main').innerHTML = text;
+/*
+    let flereKatte = [];
+    while(flereKatte.length < 4){
+        let kat = data[Math.floor(Math.random() * data.length)];
+        flereKatte.push(kat);
+    }
+    text += `
+        <section class="flereKatte">
+        <h2>Se også</h2>
+        <section class="katteOverblikGrid">`;
+    for (let i = 0; i < flereKatte.length; i++) {
+        text += `
+            <a href="index.html?kat?${flereKatte[i].slug}">
+                <img src="${flereKatte[i].acf.billeder.billede1.url}" alt="${flereKatte[i].acf.navn}">
+                <section>
+                    <p>${flereKatte[i].acf.navn} - ${flereKatte[i].acf.alder}</p>
+                    <p>${flereKatte[i].acf.inde_ude}</p>
+                </section>
+            </a> 
+    `;
+    }
+    text += `</section></section>`;
+    document.querySelector('main').innerHTML = text;
+       */ 
 }
 
 /* KODE NEDENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
@@ -398,7 +423,9 @@ function showDivs(n) {
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
     }
-    x[slideIndex-1].style.display = "block";  
+    if (x.length > 0) {
+        x[slideIndex-1].style.display = "block";  
+    }
 }
 
 /* KODE OVENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
@@ -490,4 +517,3 @@ function drawForeningen(data) {
 function drawKontakt() {
     console.log("i woooork at the bank");
 }
-
