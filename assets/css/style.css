@@ -80,6 +80,7 @@ nav ul li a {
 	text-decoration: none;
     color: var(--white);
     display: inline-block;
+    /*border-bottom: solid 2px var(--green); */
 }
 
 nav ul li a:after {
@@ -92,7 +93,7 @@ nav ul li a:after {
 
 nav ul li a:hover:after { transform: scaleX(1); }
 
-/*nav li a:hover {border-bottom: solid 1px var(--white);}*/
+/*nav li a:hover {border-bottom: solid 2px var(--white);} */
 
 main {
     margin: 0 15%;
@@ -408,6 +409,10 @@ input[type=submit] {
     border: none;
     cursor: pointer;
     box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.137);
+}
+
+.cursive {
+    font-style: italic;
 }
 
 footer {

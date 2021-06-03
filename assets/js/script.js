@@ -326,7 +326,7 @@ function drawStoetOs() {
                 </ol>
                 <h5>ELLER indtast nummeret i din app: 94686</h5>
                 <ol>
-                    <li>Vælg ok når du får beskeden "94686 er ikke i dine kontakter"</li>
+                    <li>Vælg ok når du får beskeden <span class="cursive">"94686 er ikke i dine kontakter"</span></li>
                     <li>Swipe for betaling</li>
                 </ol>
                 <h4>Betal via bankoverførsel:</h4>
