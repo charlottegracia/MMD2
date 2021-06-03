@@ -300,10 +300,13 @@ function drawCat(data) {
             text += `
             <h1>${kat.acf.navn}</h1>
             <section class="katGrid">
-                <section class="slideshowGrid"> 
-                    <i class="ikon fas fa-chevron-left" onclick="plusDivs(-1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
-                    <section>
-            `;
+                `;
+                if (kat.acf.billeder.billede2) {
+                    text +=`
+                    <section class="slideshowGrid"> 
+                    <i class="ikon fas fa-chevron-left" onclick="plusDivs(-1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self --> `;
+                }
+            text += `<section>`;
             if (kat.acf.billeder.billede1 != false) {
                 text += `<img class="firstPic mySlides" src="${kat.acf.billeder.billede1.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
             }
@@ -318,9 +321,13 @@ function drawCat(data) {
             }
             
             text += `
-                </section>
-                    <i class="ikon fas fa-chevron-right" onclick="plusDivs(1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
-                </section>
+                </section>`;
+            if (kat.acf.billeder.billede2) {
+                text +=`
+                <i class="ikon fas fa-chevron-right" onclick="plusDivs(1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
+                </section>`;
+            }
+            text += `
                 <article class="katInfo">
                     <h2>Info om kat</h2>
                     <ul>
