@@ -121,7 +121,7 @@ function drawFrontpage(data) {
     .then(billeder => { //passing data through arrow function
         text += `
         <h1>Nordsjællands Kattehjælp</h1>
-        <section>
+        <section class="frontpageGrid">
             <a class="blue" href="index.html?adopter">
                 <h2>Adopter</h2>
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
@@ -247,7 +247,7 @@ function drawAdopter(data) {
                     <p>Med i prisen følger et års støttemedlemsskab af foreningen (normalt kr. 275,- pr. år). </p>
                     <p>Kattene formidles i takt med at de bliver klar til hjem. De annonceres på vores Facebook gruppe og på dba samt her på hjemmesiden under Katte som søger hjem</p>
                 </article>
-                <article class="white">
+                <article class="white venteliste">
                     <h2 class="darkblueText">Vil du på ventelisten?</h2>
                     <p>Så send os en mail på info@kattehjaelp.dk og fortæl lidt om hvad du søger og hvilket hjem du tilbyder (inde/udeliv, børn/alder, andre dyr/hvilke osv.) og lad os hjælpe med at finde den helt rigtige kat til dit hjem.</p>
                     <p>Vores katte formidles primært som indekatte eller til hjem med lukket have eller kattegård, men vi formidler også katte til fritløb hvis man bor et egnet sted og katten forventes at kunne trives som udekat.</p>
