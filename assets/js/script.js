@@ -290,13 +290,13 @@ function drawCat(data) {
     console.log(data);
     const url = window.location.href;
     let urlSplit = url.split('?');
+    let text = "";
     data.forEach(kat => {
         if (urlSplit[2] == kat.slug) {
             let title = `<title>${kat.acf.navn} - Nordsjællands Kattehjælp</title>`;
             let metaText = `<meta name="description" content="${kat.acf.beskrivelse}">`
             document.querySelector("head").innerHTML += title;
             document.querySelector("head").innerHTML += metaText;
-            let text = "";
             text += `
             <h1>${kat.acf.navn}</h1>
             <section class="katGrid">
@@ -360,9 +360,26 @@ function drawCat(data) {
                 </article>
             </section>
             `;
-            document.querySelector('main').innerHTML = text;
         }
     });
+    text += `
+        <section>
+        <h2>Se også</h2>
+        <section class="katteOverblikGrid">`;
+    for (let i = 0; i < 4; i++) {
+        text += `
+            <a href="index.html?kat?${data[i].slug}">
+                <img src="${data[i].acf.billeder.billede1.url}" alt="${data[i].acf.navn}">
+                <section>
+                    <p>${data[i].acf.navn} - ${data[i].acf.alder}</p>
+                    <p>${data[i].acf.miljo}</p>
+                </section>
+            </a>
+        
+    `;
+    }
+    text += `</section></section>`;
+    document.querySelector('main').innerHTML = text;
 }
 
 /* KODE NEDENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
