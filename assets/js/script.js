@@ -188,7 +188,7 @@ function drawSamarbejdspartnere() {
     .then(samarbejdspartnere => { //passing data through arrow function
         let text = "";
         text += `
-            <h1>Samarbejdspartnere</h1>
+            <h1>Samarbejde</h1>
             <h2>Samarbejdspartnere og sponsorer</h2>`;
         text += `<section class="samarbejdsgrid">`;
         samarbejdspartnere.forEach(partner => {
@@ -226,7 +226,7 @@ function drawAdopter(data) {
         `;
         data.forEach(kat => {
             text +=
-            `<a href="index.html?kat?${kat.acf.navn}">
+            `<a href="index.html?kat?${kat.slug}">
                 <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
                 <section>
                     <p>${kat.acf.navn} - ${kat.acf.alder}</p>
@@ -287,12 +287,11 @@ function drawAdopter(data) {
 }
 
 function drawCat(data) {
+    console.log(data);
     const url = window.location.href;
     let urlSplit = url.split('?');
-    console.log(data);
     data.forEach(kat => {
-        if (urlSplit[2] == kat.acf.navn) {
-            console.log("jubiii");
+        if (urlSplit[2] == kat.slug) {
             let title = `<title>${kat.acf.navn} - Nordsjællands Kattehjælp</title>`;
             let metaText = `<meta name="description" content="${kat.acf.beskrivelse}">`
             document.querySelector("head").innerHTML += title;
@@ -300,12 +299,85 @@ function drawCat(data) {
             let text = "";
             text += `
             <h1>${kat.acf.navn}</h1>
-            <img class="katImg" src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
+            <section class="katGrid">
+                <section class="slideshowGrid"> 
+                    <i class="ikon fas fa-chevron-left" onclick="plusDivs(-1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
+                    <section>
+            `;
+            if (kat.acf.billeder.billede1 != false) {
+                text += `<img class="firstPic mySlides" src="${kat.acf.billeder.billede1.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
+            }
+            if (kat.acf.billeder.billede2 != false) {
+                text += `<img class="mySlides" src="${kat.acf.billeder.billede2.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
+            }
+            if (kat.acf.billeder.billede3 != false) {
+                text += `<img class="mySlides" src="${kat.acf.billeder.billede3.url}"></img>`;// Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
+            }
+            if (kat.acf.billeder.billede4 != false) {
+                text += `<img class="mySlides" src="${kat.acf.billeder.billede4.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
+            }
+            
+            text += `
+                </section>
+                    <i class="ikon fas fa-chevron-right" onclick="plusDivs(1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
+                </section>
+                <article class="katInfo">
+                    <h2>Info om kat</h2>
+                    <ul>
+                        <li><span class="boldText">Køn: </span>${kat.acf.kon}</li>
+                        <li><span class="boldText">Miljø: </span>${kat.acf.inde_ude}</li>
+                        <li><span class="boldText">Alder: </span>${kat.acf.alder}</li>
+                        <li><span class="boldText">Status: </span>${kat.acf.status}</li>
+                        <li><span class="boldText">Pris: </span>${kat.acf.pris},-</li>
+                        <li><span class="boldText">Plejeby: </span>${kat.acf.plejeby}</li>
+                        <li><span class="boldText">Formidler: </span>${kat.acf.formidler} - kontakt via <span class="boldText">${kat.acf.formidler_email}</span></li>
+                    </ul>
+                    <p><span class="boldText">Kastreret, vaccineret, chippet</span> og <span class="boldText">øremærket</span>.</p>
+                    <p>Medbringer <span class="boldText">sundhedsbog</span> og madpakke til den første tid i nyt hjem.</p>
+                    <p>Der anbefales tegning af en sygeforsikring - f.eks hos Dyreforsikringdanmark.dk</p>
+                </article>
+                <article class="katBeskrivelse">
+                    <h3>Beskrivelse</h3>
+                    <p>${kat.acf.beskrivelse}</p>
+                </article>
+                <article class="katPlejefamilie">
+                `;
+                if (kat.acf.plejefamilie_navne != false) {
+                    text += `<h4>Plejefamilien (${kat.acf.plejefamilie_navne}) fortæller</h4>`;
+                } else {
+                    text += `<h4>Plejefamilien fortæller</h4>`;
+                }
+                text += `
+                    <p>${kat.acf.plejefamilien_fortaeller}</p>
+                </article>
+            </section>
             `;
             document.querySelector('main').innerHTML = text;
         }
     });
 }
+
+/* KODE NEDENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+}
+
+/* KODE OVENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
+
 
 function drawStoetOs() {
     let title = "<title>Støt os - Nordsjællands Kattehjælp</title>";
@@ -356,7 +428,7 @@ function drawStoetOs() {
                     <input type="number" placeholder="Telefon">
                     <input type="text" placeholder="Adresse">
                     <input type="text" placeholder="Postnummer og by">
-                    <textarea placeholder="Din besked.." style="height:100px"></textarea>
+                    <textarea placeholder="Din besked..." style="height:100px"></textarea>
                 <input class="sendKnap" type="submit" value="Send">
             </form>    
         </section>
@@ -393,3 +465,4 @@ function drawForeningen(data) {
 function drawKontakt() {
     console.log("i woooork at the bank");
 }
+
