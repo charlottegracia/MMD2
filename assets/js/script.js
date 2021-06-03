@@ -127,7 +127,7 @@ function drawFrontpage(data) {
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
             </a>`
         if (data[0]) {
-            text += `<a href="index.html?kat?${data[0].acf.navn}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[0].slug}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
         } else {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
         }
@@ -138,12 +138,12 @@ function drawFrontpage(data) {
             </a>
         `;
         if (data[1]) {
-            text += `<a href="index.html?kat?${data[1].acf.navn}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[1].slug}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
         } else {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede2.url}" alt="Kat></a>`;
         }
         if (data[2]) {
-            text += `<a href="index.html?kat?${data[2].acf.navn}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[2].slug}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
         } else {
             text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Kat"></a>`;
@@ -155,7 +155,7 @@ function drawFrontpage(data) {
             </a>
         `;
         if (data[3]) {
-            text += `<a href="index.html?kat?${data[3].acf.navn}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
+            text += `<a href="index.html?kat?${data[3].slug}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
         } else {
             text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede4.url}" alt="Kat"></a>`;

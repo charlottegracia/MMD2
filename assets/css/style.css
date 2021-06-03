@@ -549,6 +549,7 @@ input[type=submit] {
 .ikon {
     color: var(--grey);
     margin: auto;
+    font-size: 30px;
 }
 
 /* FOOTER */
