@@ -288,14 +288,14 @@ function drawAdopter(data) {
 }
 
 function drawCat(data) {
-    console.log(data);
     const url = window.location.href;
     let urlSplit = url.split('?');
     let text = "";
+    console.log(data);
     data.forEach(kat => {
         if (urlSplit[2] == kat.slug) {
             let title = `<title>${kat.acf.navn} - Nordsjællands Kattehjælp</title>`;
-            let metaText = `<meta name="description" content="${kat.acf.beskrivelse}">`
+            let metaText = `<meta name="description" content="${kat.acf.beskrivelse}">`;
             document.querySelector("head").innerHTML += title;
             document.querySelector("head").innerHTML += metaText;
             text += `
@@ -407,7 +407,7 @@ function drawCat(data) {
        */
 }
 
-/* KODE NEDENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
+/* KODE NEDENFOR ER FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -428,7 +428,7 @@ function showDivs(n) {
     }
 }
 
-/* KODE OVENFOR FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
+/* KODE OVENFOR ER FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
 
 
 function drawStoetOs() {
