@@ -381,30 +381,30 @@ function drawCat(data) {
     }
     text += `</section></section>`;
     document.querySelector('main').innerHTML = text;
-/*
-    let flereKatte = [];
-    while(flereKatte.length < 4){
-        let kat = data[Math.floor(Math.random() * data.length)];
-        flereKatte.push(kat);
-    }
-    text += `
-        <section class="flereKatte">
-        <h2>Se også</h2>
-        <section class="katteOverblikGrid">`;
-    for (let i = 0; i < flereKatte.length; i++) {
-        text += `
-            <a href="index.html?kat?${flereKatte[i].slug}">
-                <img src="${flereKatte[i].acf.billeder.billede1.url}" alt="${flereKatte[i].acf.navn}">
-                <section>
-                    <p>${flereKatte[i].acf.navn} - ${flereKatte[i].acf.alder}</p>
-                    <p>${flereKatte[i].acf.inde_ude}</p>
-                </section>
-            </a> 
-    `;
-    }
-    text += `</section></section>`;
-    document.querySelector('main').innerHTML = text;
-       */
+
+    // let flereKatte = [];
+    // while(flereKatte.length < 4){
+    //     let kat = data[Math.floor(Math.random() * data.length)];
+    //     flereKatte.push(kat);
+    // }
+    // text += `
+    //     <section class="flereKatte">
+    //     <h2>Se også</h2>
+    //     <section class="katteOverblikGrid">`;
+    // for (let i = 0; i < flereKatte.length; i++) {
+    //     text += `
+    //         <a href="index.html?kat?${flereKatte[i].slug}">
+    //             <img src="${flereKatte[i].acf.billeder.billede1.url}" alt="${flereKatte[i].acf.navn}">
+    //             <section>
+    //                 <p>${flereKatte[i].acf.navn} - ${flereKatte[i].acf.alder}</p>
+    //                 <p>${flereKatte[i].acf.inde_ude}</p>
+    //             </section>
+    //         </a> 
+    // `;
+    // }
+    // text += `</section></section>`;
+    // document.querySelector('main').innerHTML = text;
+       
 }
 
 /* KODE NEDENFOR ER FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
