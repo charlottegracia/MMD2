@@ -62,6 +62,8 @@ body {
         width: 13vw;
         padding: 0 1vw;
     }
+
+
 }
 
 /* HEADER NAVIGATION */
@@ -242,7 +244,7 @@ main section a img {
     object-fit: cover;
 }
 
-/* SAMARBEJDE OG SPONSOERER */
+/* SAMARBEJDE OG SPONSORER */
 
 .samarbejdsgrid {
     display: grid;
@@ -351,11 +353,26 @@ main section a img {
 }
 
 @media screen and (min-width: 813px) and (max-width: 1200px) {
+    html {
+    background-size: contain;
+    background-attachment: fixed;
+    }
+
     .adoptionAfKatte {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
+
+    .katteOverblikGrid {
+        grid-gap: 50px 10px;
+    }
+
+    .adoptionAfKatte img {
+        display: none;
+    }
+    
+
 } 
 
 article {
