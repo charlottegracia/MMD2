@@ -7,6 +7,7 @@ const apiUserCredentials = {
 const katId = 27;
 const stockImagesId = 28;
 const samarbejdspartnereId = 29;
+const foreningenId = 32;
 
 getToken();
 
@@ -49,7 +50,7 @@ function createPage() {
         } else if (url.indexOf('stoet-os') > -1) {
             drawStoetOs();
         } else if (url.indexOf('foreningen') > -1) {
-            drawForeningen(data);
+            drawForeningen();
         } else if (url.indexOf('samarbejde') > -1) {
             drawSamarbejdspartnere();
         } else if (url.indexOf('kontakt') > -1) {
@@ -161,7 +162,7 @@ function drawFrontpage(data) {
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede4.url}" alt="Kat"></a>`;
         }
         text += `
-            <a class="darkblue" href="#">
+            <a class="darkblue" href="index.html?foreningen">
                 <h2>Foreningen</h2>
                 <h3 class="blueText">Vedtægter / Generalforsamling</h3>
             </a>
@@ -381,30 +382,6 @@ function drawCat(data) {
     }
     text += `</section></section>`;
     document.querySelector('main').innerHTML = text;
-
-    // let flereKatte = [];
-    // while(flereKatte.length < 4){
-    //     let kat = data[Math.floor(Math.random() * data.length)];
-    //     flereKatte.push(kat);
-    // }
-    // text += `
-    //     <section class="flereKatte">
-    //     <h2>Se også</h2>
-    //     <section class="katteOverblikGrid">`;
-    // for (let i = 0; i < flereKatte.length; i++) {
-    //     text += `
-    //         <a href="index.html?kat?${flereKatte[i].slug}">
-    //             <img src="${flereKatte[i].acf.billeder.billede1.url}" alt="${flereKatte[i].acf.navn}">
-    //             <section>
-    //                 <p>${flereKatte[i].acf.navn} - ${flereKatte[i].acf.alder}</p>
-    //                 <p>${flereKatte[i].acf.inde_ude}</p>
-    //             </section>
-    //         </a> 
-    // `;
-    // }
-    // text += `</section></section>`;
-    // document.querySelector('main').innerHTML = text;
-       
 }
 
 /* KODE NEDENFOR ER FRA W3SCHOOLS. Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self */
@@ -481,7 +458,7 @@ function drawStoetOs() {
                     <input type="text" placeholder="Adresse">
                     <input type="text" placeholder="Postnummer og by">
                     <textarea placeholder="Din besked..." style="height:100px"></textarea>
-                <input class="sendKnap" type="submit" value="Send">
+                <button type="button">Send</button>
             </form>    
         </section>
     `;
@@ -503,17 +480,98 @@ function drawKatINoed() {
     document.querySelector('main').innerHTML = text;
 }
 
-function drawForeningen(data) {
-    console.log("candice");
-    console.log(data);
-    let text = "";
-    text += `
-        <h1>${data[1].acf.plejefamilie_navne}</h1>
-        <img src="${data[1].acf.billeder.billede1.url}" alt="">
-    `;
-    document.querySelector('main').innerHTML = text;
+function drawForeningen() {
+    let title = "<title>Foreningen- Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.">`
+    document.querySelector("head").innerHTML += metaText;
+    fetch(`${apiUrl}posts?status=private&categories=${foreningenId}&per_page=50`, {
+        headers: {
+            'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
+        }
+    }) //specifies the url to fetch() method with the API key
+    .then(response => response.json()) //converts response to JSON object
+    .then(billeder => { //passing data through arrow function
+        console.log(billeder);
+        let text = "";
+        text += `
+        <h1>Foreningen</h1>
+        <section class="foreningenGrid">
+            <article class="white">
+                <h2>Om foreningen Nordsjællands Kattehjælp</h2>
+                <p>Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.</p>
+                <p>Står du med en tilløber, som du ikke kan finde ejeren til, så hjælper vi med råd og vejledning og kan tilbyde plejeophold med henblik på at finde katten et nyt hjem.</p>
+                <p>Vi hjælper med neutralisering, vaccination og øremærkning af katte til genudsætning i den udstrækning det er os muligt. Dette forudsætter, at man tegner et medlemskab hos os, at katten ikke er tamkat samt at man påtager sig ansvaret som fodervært</p>
+                <p>Ved akutte sager med tilskadekomne katte skal du kontakte Dyrenes Beskyttelse på 1812 eller bringe katten til nærmeste dyrlæge.</p>
+                <h3>Bestyrelsen</h3>
+                <ul>
+                    <li><span class="boldText">Formand</span> Joan Andersen - joan@kattehjaelp.dk</li>
+                    <li><span class="boldText">Næstformand</span> Annette Nielsen - annette@kattehjaelp.dk</li>
+                    <li><span class="boldText">Kasserer</span> Kirsten Hammer - kirsten@kattehjaelp.dk</li>
+                    <li><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - margit@kattehjaelp.dk</li>
+                    <li><span class="boldText">5. bestyrelsesmedlem</span> Birgit Bauer - birgit@kattehjaelp.dk</li>
+                </ul>
+            </article>
+            <img src="${billeder[0].acf.kort.url}" alt="Kort">
+            <article>
+                <h2 class="greenText">Vedtægter & generalforsamling</h2>
+                <p>Regnskabsåret for Foreningen Nordsjællands Kattehjælp går fra 1. januar til 31. december. Der afholdes generalforsamling hvert år sidst i maj. Betalende medlemmer indkaldes via e-mail senest 4 uger før afholdelse.</p>
+                <h3>Generalforsamling</h3>
+                <address>
+                    <p>Nordsjællands Kattehjælp</p>
+                    <p>Lørdag den 18. juli 2020, kl. 14-16</p>
+                    <p>Afholdt i Snekkersten</p>
+                </address>
+                <p>Generalforsamlingen var udsat fra maj til juli pga covid-19</p>
+                <p><span class="boldText">Fremmødte:</span> Joan Andersen, Annette Nielsen, Kirsten Hammer, Margit Rand, Birgit Bauer, Annette Bantz, Anne Glipstrup, Carli Hækkerup, Heidi Juel Hermansen, Rikke Falk Hansen og Anne Mau.</p>
+                <button class="darkgreen" type="button">Download PDF</button>
+            </article>
+            <img src="${billeder[0].acf.kat.url}" alt="${billeder[0].acf.kat.title}">
+        </section>
+        <section>
+            <h4 class="green dropdown" onclick="dropdown()">Seneste generalforsamling <i class="fas fa-chevron-down"></i></h4>
+            <section class="toShowOrNot2Show white dropdownContentForeningen" id="dropdownForeningen">
+                <article>
+                    <ol>
+                        <li>Valg af dirigent (Birgit Bauer)</li>
+                        <li>Valg af referent (Anne Glipstrup)</li>
+                        <li>Beretning fra formanden inkl. Regnskab</li>
+                    </ol>
+                    <p>Nordsjællands Kattehjælp (NSK), har kontinuerligt haft mellem 30-60 katte i pleje hen over året, hvilket er nogenlunde det samme antal som de foregående år. Foreningen fyldte 4 år den 18. juni og har pt. hjulpet omkring 500 katte videre ud i kærlige hjem – plus hjulpet mere end 100 katte til et bedre liv som neutraliseret genudsætningskat med en fodervært tilknyttet.</p>
+                    <p>Vi afholdt et socialt arrangement 23/11 besøg Skibsklarergården – med frokost og pakkeleg. Arrangeret af Susanne. Arrangementet var en stor succes.</p>
+                    <p>Kort info om Michelle Garnier 6/9 kl 14. Gratis for medlemmer.</p>
+                    <p>Der har kun været afholdt 1 fysisk bestyrelsesmøde. Herudover er der afholdt et par telefonmøder.</p>
+                    <p>Der er brugt 210.257 på dyrlægehjælp i 2019. Hertil kommer dyrlægeregninger på 104.754 for Vestegnens Kattehjælp, 10.337 for Hundested Havnekatte og 4611 for Sannes foderplads. Pengene er indsamlet af de forskellige foreninger og har ikke påvirket NSK økonomi.</p>
+                    <p>Vi fik desværre ikke 30.000 fra Dyrevelfærdspuljen til brug i 2020, men kun 7.560,25,- De har ændret vilkårene igen og der kommer ikke til at være helt så mange penge i puljen fremadrettet.</p>
+                </article>
+                <article>
+                    <p>Vi valgte i efteråret at melde os ind i DOSO som har givet os adgang til at søge diverse legater og fonde. Vi har en ansøgning ude nu og har lige fået 30.000 til genudsætninger/foder fra en anden fond.</p>
+                    <p>DOSO kæmper fortsat for en kattelov. Håber at have godt nyt på næste gf.</p>
+                    <p>Vi havde mange katte siddende i årets første måneder som var ordnet og klar til hjem og hvor udgiften lå i 2019 og indtægten først i 2020. Regnskabet endte derfor med et lille minus på kr. 116,- Vores bankkonto har det godt pt. og vi har fået nogle store donationer af god kvalitetsmad der gør at vi er ret godt kørende pt.</p>
+                    <p>Regnskab blev godkendt.</p>
+                    <p>Ditte Bøgevang Kanstrup blev valgt til at stå for ekstern revision, da foreningen forventer at få mere end 50.000 via indsamlinger fremadrettet.</p>
+                    <ol start="4">
+                        <li>Fastsættelse af kontigent for medlemskab 2021. Kontigent forsætter uændret </li>
+                        <li>Valg af formand. Joan Andersen modtager genvalg. Ingen andre kandidater </li>
+                        <li>Valg af 4. bestyrelsesmedlem. Margit Rand modtager genvalg. Ingen andre kandidater </li>
+                        <li>Behandling af forslag fra bestyrelse og medlemmer. Ingen punkter indkommet </li>
+                        <li>Eventuelt. Fri snak om den manglende kattelovgivning og om fonde/legater, som kan søges fremadrettet. </li>
+                    </ol>
+                </article>
+            </section>
+        </section>
+        `;
+        document.querySelector('main').innerHTML = text;
+    })
+    .catch(error => {
+        console.log(error); // logs any errors
+    })
 }
 
 function drawKontakt() {
     console.log("i woooork at the bank");
+}
+
+function dropdown() {
+    document.getElementById("dropdownForeningen").classList.toggle('toShowOrNot2Show');
 }

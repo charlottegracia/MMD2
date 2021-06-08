@@ -464,7 +464,7 @@ input[type=text], input[type=number], textarea {
     background-color: var(--white);
 }
   
-input[type=submit] {
+button {
     background-color: var(--green);
     color: white;
     padding: 10px 20px;
@@ -605,6 +605,63 @@ input[type=submit] {
         grid-gap: 20px;
     }
 }  */
+
+/* FORENINGEN */
+.foreningenGrid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.foreningenGrid article {
+    padding: 20px 20px 0 20px;
+}
+
+.foreningenGrid h2 {
+    margin: 0;
+}
+
+.foreningenGrid h3 {
+    margin: 0;
+}
+
+.foreningenGrid ul {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.foreningenGrid li {
+    padding: 0px;
+}
+
+.foreningenGrid img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.dropdown {
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdownContentForeningen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    border-radius: 5px;
+}
+
+.toShowOrNot2Show {
+    display: none;
+}
 
 /* FOOTER */
 footer {
