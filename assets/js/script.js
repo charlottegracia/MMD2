@@ -481,7 +481,7 @@ function drawKatINoed() {
 }
 
 function drawForeningen() {
-    let title = "<title>Foreningen- Nordsjællands Kattehjælp</title>";
+    let title = "<title>Foreningen - Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
     let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.">`
     document.querySelector("head").innerHTML += metaText;
