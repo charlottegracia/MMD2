@@ -528,8 +528,8 @@ function drawForeningen() {
             <img src="${billeder[0].acf.kat.url}" alt="${billeder[0].acf.kat.title}">
         </section>
         <section>
-            <h4 class="green dropdown" onclick="dropdown()">Seneste generalforsamling <i class="fas fa-chevron-down"></i></h4>
-            <section class="toShowOrNot2Show white dropdownContentForeningen" id="dropdownForeningen">
+            <h4 class="green dropdown" onclick="dropdown()">Seneste generalforsamling <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+            <section class="hide white dropdownContentForeningen" id="dropdownForeningen">
                 <article>
                     <ol>
                         <li>Valg af dirigent (Birgit Bauer)</li>
@@ -572,5 +572,5 @@ function drawKontakt() {
 }
 
 function dropdown() {
-    document.getElementById("dropdownForeningen").classList.toggle('toShowOrNot2Show');
+    document.getElementById("dropdownForeningen").classList.toggle('hide');
 }
