@@ -395,8 +395,12 @@ function plusDivs(n) {
 function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
+    if (n > x.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = x.length
+    }
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
     }
@@ -452,14 +456,14 @@ function drawStoetOs() {
             </article>
             <form>
                 <h3 class="greenText">Skriv og bliv medlem</h3>
-                    <input type="text" placeholder="Navn">
-                    <input type="text" placeholder="E-mail">
-                    <input type="number" placeholder="Telefon">
-                    <input type="text" placeholder="Adresse">
-                    <input type="text" placeholder="Postnummer og by">
-                    <textarea placeholder="Din besked..." style="height:100px"></textarea>
+                    <input class="white" type="text" placeholder="Navn">
+                    <input class="white" type="text" placeholder="E-mail">
+                    <input class="white" type="number" placeholder="Telefon">
+                    <input class="white" type="text" placeholder="Adresse">
+                    <input class="white" type="text" placeholder="Postnummer og by">
+                    <textarea class="white" placeholder="Din besked..." style="height:100px"></textarea>
                 <button type="button">Send</button>
-            </form>    
+            </form>
         </section>
     `;
 
@@ -568,7 +572,81 @@ function drawForeningen() {
 }
 
 function drawKontakt() {
-    console.log("i woooork at the bank");
+    let text = `
+    <h1>Kontakt</h1>
+        <section class="kontaktOsGrid white">
+            <article>
+                <h2>Bestyrelsen i Nordsjællands Kattehjælp</h2>
+                <p><span class="boldText">Formand</span> Joan Andersen - joan@kattehjaelp.dk</p>
+                <p><span class="boldText">Næstformand</span> Annette Nielsen - annette@kattehjaelp.dk</p>
+                <p><span class="boldText">Kasserer</span> Kirsten Hammer - kirsten@kattehjaelp.dk</p>
+                <p><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - margit@kattehjaelp.dk</p>
+                <p><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - birgit@kattehjaelp.dk</p>
+                <p>Udover bestyrelsen har vi en række af frivillige der hjælper med pleje, kørsel, donationer og diverse ad hoc opgaver.</p>
+                <p>Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på info@kattehjaelp.dk og fortæl hvad du har lyst og mulighed for at bidrage med.</p>
+            </article>
+            <form>
+                <h3 class="blueText">Kontakt os</h3>
+                    <input class="extrawhite" type="text" placeholder="Navn">
+                    <input class="extrawhite" type="text" placeholder="E-mail">
+                    <textarea class="extrawhite" placeholder="Din besked..." style="height:100px"></textarea>
+                <button class="blue" type="button">Send besked</button>
+            </form>   
+        </section>
+        <h2 class="gdprOverskrift greenText">GDPR (Dataforordningen)</h2>
+        <section class="kontaktOsGrid">
+            <ol>
+                <li>
+                    <h4>Baggrund</h4>
+                    <p>Beskyttelse af dit privatliv er meget vigtigt for os. I denne privatlivspolitik beskriver vi derfor, hvordan Nordsjællands Kattehjælp indsamler, benytter og videregiver dine personoplysninger, når du benytter vores hjemmeside. Du anerkender og accepterer hermed, at dine personoplysninger vil blive behandlet i overensstemmelse med denne privatlivspolitik.</p>
+                </li>
+                <li>
+                    <h4>Indsamling af personoplysninger</h4>
+                    <p>Vi indsamler og behandler visse personoplysninger om dig til de formål, som fremgår af afsnit 3 nedenfor. Vi indsamler de personoplysninger, som du giver os, når du opretter medlemskab, donerer, adoptere gennem os eller kommunikerer med os på anden vis, herunder navn, adresse, telefonnummer og e-mailadresse (samt evt. oplysning om boligforhold ift. adoption).</p>
+                </li>
+                <li>
+                    <h4>Anvendelse af dine personoplysninger</h4>
+                    <p>Vi anvender alene dine personoplysninger til følgende formål:
+                        for at kunne indgå og opfylde aftale om medlemskab hos os, herunder automatisk fornyelse af medlemskab, udsendelse af nyhedsbreve, indkaldelse til generalforsamling mv.
+                        for at kunne administrere eventuelle donationer til foreningen
+                        for at kunne kommunikere med dig, når du henvender dig til os,
+                        for at overholde vores juridiske forpligtelser og kunne dokumentere, udøve eller forsvare vores juridiske rettigheder.</p>
+                </li>
+                <li>
+                    <h4>Overførsel af dine personoplysninger til tredjeparter</h4>
+                    <p>Vi kan overføre dine personoplysninger til de kategorier af tredjeparter, som fremgår nedenfor:
+                        Katteregister.dk og Dansk Katteregister.dk samt evt. samarbejdende dyrlæger efter aftale.
+                        Evt. videregivelse af oplysninger til Fødevareministeriet ifm genudsætning via tilkendte puljemidler samt til Civilstyrelsen ifm. donationer (indsamlingsnævnet).</p>
+                </li>
+            </ol>
+            <ol start="5">
+                <li>
+                    <h4>Retsgrundlag for behandling af dine oplysninger</h4>
+                    <p>Vi vil behandle dine personoplysninger i overensstemmelse med denne privatlivspolitik, fordi det er nødvendigt for:
+                        at kunne indgå og opfylde aftale om adoption, medlemskab og donation hos os, og at overholde vores juridiske forpligtelser.</p>
+                </li>
+                <li>
+                    <h4>Beskyttelse og opbevaring af dine personoplysninger</h4>
+                    <p>Vi tager din sikkerhed alvorligt og vil altid sikre, at de nødvendige tekniske og organisatoriske sikkerhedsforanstaltninger er implementeret for at beskytte dine personoplysninger mod uautoriseret eller ulovlig behandling samt undergang, tab, ændring, misbrug eller offentliggørelse. De personoplysninger, som vi indsamler om dig, vil kun blive opbevaret så længe det er nødvendigt for at indgå og opfylde aftalen med dig.</p>
+                </li>
+                <li>
+                    <h4>Indsigt i og korrektion af dine personoplysninger</h4>
+                    <p>Under visse forudsætninger har du følgende rettigheder i henhold til databeskyttelseslovgivningen:
+                        retten til at modtage en kopi af de personoplysninger som vi har indsamlet om dig og til at videregive denne kopi til en anden dataansvarlig, retten til at få slettet, opdateret eller berigtiget de personoplysninger, som vi har indsamlet om dig,
+                        retten til at begrænse behandlingen af de personoplysninger, som vi har indsamlet om dig, retten til at gøre indsigelse mod behandlingen af de personoplysninger, som vi har indsamlet om dig, retten til at tilbagekalde et eventuelt samtykke, som danner grundlag for behandlingen af dine personoplysninger, og retten til at indgive en klage til Datatilsynet (www.datatilsynet.dk).</p>
+                </li>
+                <li>
+                    <h4>Ændringer til denne privatlivspolitik</h4>
+                    <p>Denne privatlivspolitik vil løbende blive opdateret på vores hjemmeside.</p>
+                </li>
+                <li>
+                    <h4>Kontaktoplysninger</h4>
+                    <p>Hvis du har spørgsmål eller kommentarer til denne privatlivspolitik, kan du kontakte os på: info@kattehjaelp.dk</p>
+                </li>
+            </ol>
+        </section>
+    `;
+    document.querySelector('main').innerHTML = text;
 }
 
 function dropdown() {

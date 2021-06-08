@@ -25,25 +25,6 @@ body {
     --grey: #707070;
 }
 
-.green          {background-color: var(--green);}
-.darkgreen      {background-color: var(--darkgreen);}
-.blue           {background-color: var(--blue);}
-.darkblue       {background-color: var(--darkblue);}
-.white          {background-color: var(--white);}
-.greenText      {color: var(--green);}
-.darkgreenText  {color: var(--darkgreen);}
-.blueText       {color: var(--blue);}
-.darkblueText   {color: var(--darkblue);}
-.whiteText      {color: var(--white);}
-.greyText       {color: var(--grey);}
-
-.boldText {
-    font-weight: bold;
-}
-.cursive {
-    font-style: italic;
-}
-
 @media screen and (max-width: 812px) {
     html {
         background-image: none;
@@ -415,7 +396,7 @@ article img {
     grid-template-rows: 0.5fr;
     background-color: var(--white);
     border-radius: 5px;
-    padding: 0;
+    padding-bottom: 20px;
     margin: 0;
 }
 
@@ -441,11 +422,6 @@ article img {
     padding: 20px;
 }
 
-.extrawhite {
-    background-color: white;
-    margin-bottom: 50px;
-}
-
 .mailText {
     width: 95%;
     margin-top: 10px;
@@ -461,7 +437,6 @@ input[type=text], input[type=number], textarea {
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background-color: var(--white);
 }
   
 button {
@@ -665,6 +640,31 @@ button {
     display: none;
 }
 
+/* KONTAKT SIDE*/
+.kontaktOsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 60px;
+}
+
+.gdprOverskrift {
+    margin: 0;
+}
+
+.kontaktOsGrid ol {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 20px;
+}
+
+.kontaktOsGrid ol li h4 {
+    margin: 10px 0;
+}
+
+.kontaktOsGrid ol li p {
+    margin: 0 0 30px 0;
+}
+
 /* FOOTER */
 footer {
     background-color: var(--darkgreen);
@@ -672,4 +672,25 @@ footer {
     font-size: 16px;
     text-align: center;
     padding: 20px;
+}
+
+
+.green          {background-color: var(--green);}
+.darkgreen      {background-color: var(--darkgreen);}
+.blue           {background-color: var(--blue);}
+.darkblue       {background-color: var(--darkblue);}
+.white          {background-color: var(--white);}
+.extrawhite     {background-color: white;}
+.greenText      {color: var(--green);}
+.darkgreenText  {color: var(--darkgreen);}
+.blueText       {color: var(--blue);}
+.darkblueText   {color: var(--darkblue);}
+.whiteText      {color: var(--white);}
+.greyText       {color: var(--grey);}
+
+.boldText {
+    font-weight: bold;
+}
+.cursive {
+    font-style: italic;
 }
