@@ -41,7 +41,7 @@ function createPage() {
     .then(response => response.json()) //converts response to JSON object
     .then(data => { //passing data through arrow function
         drawNav();
-        /*if (url.indexOf('adopter') > -1) {
+        if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
         } else if (url.indexOf('kat-i-noed') > -1) {
             drawKatINoed();
@@ -57,7 +57,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        }*/
+        }
         drawFooter();
     })
     .catch(error => {
@@ -93,7 +93,7 @@ function drawNav() {
                 <a href="index.html?kontakt">Kontakt</a>
             </li>
         </ul>
-        <i class="navIkon fas fa-bars" onclick="dropdownMobile()"></i>
+        <i id="navIkon" class="fas fa-bars" onclick="dropdownMobile()"></i>
     </nav>
     <ul class="dropdownMobile" id="navMobile">
         <li>
@@ -500,15 +500,69 @@ function drawStoetOs() {
 }
 
 function drawKatINoed() {
-    console.log("deez");
-    console.log("nuts");
     let title = `<title>Kat i nød - Nordsjællands Kattehjælp</title>`;
     let metaText = `<meta name="description" content="INDSÆT TEKST">`
     document.querySelector("head").innerHTML += title;
     document.querySelector("head").innerHTML += metaText;
     let text = "";
     text += `
-        <h1>Kat i nød</h1>
+    <h1>Kat i nød</h1>
+    <section class="katINoedGrid">
+        <section>
+            <h2>Katte i nød</h2>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(1)">Hvad gør jeg, hvis jeg finder en forladt killing? <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed1">
+                    <p>I første omgang, er det vigtigt at sikre sig at killingen virkelig er forladt af deres mor. Alt efter killingens alder kan der gå 3-8 timer imellem at moderkatten vender tilbage for at die sine killinger.</p>
+                    <p>Herefter er det meget vigtigt at en kold og forkommen killings kropstemperatur er oppe på 35 grader før man giver den mad. Læg evt. en flaske varmt vand ned til den som varmedunk (pak flasken ind i håndklæde). I akutte tilfælde gives fysiologisk sukkervand (fremstilles af 55 g. druesukker opløst i 1 liter vand - hvis du ikke har druesukker, kan 1 dl. puddersukker anvendes i stedet).</p>
+                    <p>Når killingen har opnået normal kropstemperatur kan den fodres med modermælkerstatning. Husk at der både skal bøvses af og rengøres bagi efter hvert måltid. Se evt. videoen øverst.</p>
+                    <p>Nordjyllands Hittekilling har lavet en fin lille anvisning på pleje og pasning af killinger på deres hjemmeside som du finder ved <span class="boldText">at klikke her</span></p>
+                </article>
+            </section>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(2)">Tilløberkat der er kontaktsøgende <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed2">
+                    <h2>hej</h2>
+                </article>
+            </section>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(3)">Vildkat/vildtlevende kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed3">
+                    <h2>hej</h2>
+                </article>
+            </section>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(4)">Tilskadekommende kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed4">
+                    <h2>hej</h2>
+                </article>
+            </section>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(5)">Trafikdræbt kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed5">
+                    <h2>hej</h2>
+                </article>
+            </section>
+            <section class="dropdownKatINoed">
+                <h4 class="blue dropdown" onclick="dropdownKatiNoed(6)">Katteregistre, internater & foreninger <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
+                <article class="hide white dropdownContentKatINoed" id="katINoed6">
+                    <h2>hej</h2>
+                </article>
+            </section>
+        </section>
+        <img src="assets/images/lol.jpeg" alt="lol">
+        <section>
+            <h3 class="greenText">FIV (For stadie til katteaids)</h3>
+            <p>Fiv er et forstadie til katteaids og behøver således ikke nødvendigvis at udvikle sig til en sygdom. Fiv opdages via en blodprøve hos dyrlægen og betyder i første omgang, at din kat kan være mere modtagelig overfor infektioner,  få feber, hævede lymfeknuder osv. Når/hvis sygdommen for alvor bryder ud, så vil immunforsvaret nedbrydes af virus. Således får andre sygdomsforløb mulighed for at udvikle sig og symptomerne kan derfor være mange forskellige.</p>
+            <p>Katten smittes via dybe bid og i forbindelse med parring. Typisk er det fritløbere (udekatte), der bliver smittet. Fiv smitter ikke mennesker! Man skal derfor overveje, om en fiv positiv udekat kan omskoles til at være indekat? I dag får flere og flere katte bygget en kattegård/voliere for at undgå at katten udsættes for fare eller pga naboklager. Nogle gange viser det sig dog, at katten er bedst tjent med at blive aflivet.</p>
+            <p>I USA findes der en fiv vaccine. Den er ikke godkendt i DK. Læs evt. mere her. Ofte afhænger en fiv kats skæbne af hvilken dyrlæge der tester den. Nogen dyrlæger anbefaler altid aflivning men mange er blevet bedre til at informere ejerne om kattens fremtidsudsigter - der ikke altid behøver at være dårlig. På internaterne aflives fiv katte næsten altid, da der er så mange herreløse katte i Danmark at det kan virke omsonst at redde katte med fiv.</p>
+            <p>I Nordsjællands Kattehjælp valgte vi at hjælpe 3 fiv katte ud i hjem i 2018 og 2 i 2019 og Olga i 2020. To af dem fra 2018 (Skipper og Jarl) var godt brugte hankatte fra Hundested Havn, som vi vurderede ville sætte pris på et forkælet liv som indekatte efter et hårdt liv på havnen - og indtil videre ser det ud til at lykkes (se fotos her på siden). Den sidste var en tilløbende ungkat (Lilleven) som i dag bor som tilfreds indekat hos Birgit fra vores bestyrelse. I 2019 har vi formidlet 2 maincoon drenge med Fiv til nye hjem i hhv. Ringsted og Århus. Læs mere i vores facebook gruppe "Katteliv med fiv"</p>
+        </section>
+        <section>
+            <p>I England findes der et ældre par der gennem livet har taget 80 fiv katte ind som deres egne (fiv shelter). De har udgivet en lille bog (booklet) med deres erfaringer omkring katte med fiv. Den er gratis og kan downloades her.</p>
+            <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs her hvorfor: http://www.fivcats.com/FIV/fiv_kittens.html</p>
+        </section>
+    </section>
     `;
     document.querySelector('main').innerHTML = text;
 }

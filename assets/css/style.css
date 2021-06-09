@@ -126,7 +126,7 @@ nav ul li a:hover:after { transform: scaleX(1); }
     color: var(--darkgreen);
 }
 
-.navIkon {
+#navIkon {
     color: var(--white);
     padding: 0 20px;
     display: none;
@@ -150,7 +150,7 @@ nav ul li a:hover:after { transform: scaleX(1); }
         display: none;
     }
 
-    .navIkon {
+    #navIkon {
         font-size: 25px;
         display: block;
     }
@@ -170,7 +170,7 @@ nav ul li a:hover:after { transform: scaleX(1); }
         display: none;
     }
 
-    .navIkon {
+    #navIkon {
         font-size: 27px;
         display: block;
     }
