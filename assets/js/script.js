@@ -101,7 +101,7 @@ function drawNav() {
 function drawFooter() {
     let text = "";
     text += `
-        <h5>info@kattehjælp.dk | Konto: reg.: 5357 konto: 0246871 | CVR nr. 37805335</h5>
+        <h5> <a href="mailto:info@kattehjaelp.dk" class="mail whiteText">info@kattehjaelp.dk</a> | Konto: reg.: 5357 konto: 0246871 | CVR nr. 37805335</h5>
         <h5>Donationer modtages på Mobilepay 94686</h5>
     `;
     document.querySelector('footer').innerHTML = text;
@@ -251,7 +251,7 @@ function drawAdopter(data) {
                 </article>
                 <article class="white venteliste">
                     <h2 class="darkblueText">Vil du på ventelisten?</h2>
-                    <p>Så send os en mail på info@kattehjaelp.dk og fortæl lidt om hvad du søger og hvilket hjem du tilbyder (inde/udeliv, børn/alder, andre dyr/hvilke osv.) og lad os hjælpe med at finde den helt rigtige kat til dit hjem.</p>
+                    <p>Så send os en mail på <a href="mailto:info@kattehjaelp.dk" class="mail">info@kattehjaelp.dk</a> og fortæl lidt om hvad du søger og hvilket hjem du tilbyder (inde/udeliv, børn/alder, andre dyr/hvilke osv.) og lad os hjælpe med at finde den helt rigtige kat til dit hjem.</p>
                     <p>Vores katte formidles primært som indekatte eller til hjem med lukket have eller kattegård, men vi formidler også katte til fritløb hvis man bor et egnet sted og katten forventes at kunne trives som udekat.</p>
                     <p>Unge killinger (3-4 mdr) formidles som udgangspunkt kun ud sammen 2 og 2 - medmindre der er kat i hjemmet i forvejen eller hvis vi vurderer at killingen vil egne sig godt til at være enekat.</p>
                     <h3 class="greyText">Katte der kræver lidt ekstra</h3>
@@ -260,7 +260,7 @@ function drawAdopter(data) {
                 </article>
                 <article>
                     <h2 class="greenText">Bliv plejer for Nordsjællands Kattehjælp</h2>
-                    <p>Er du interesseret i at blive plejefamilie for Nordsjællands Kattehjælp, så skal du kontakte foreningens plejeansvarlige Joan Andersen på mail: <span class="boldText">joan@kattehjaelp.dk</span>. I mailen skal du kort fortælle hvad du kan tilbyde af hjælp, hvordan du bor, din erfaring med katte osv. Du bliver herefter kontaktet enten pr. mail eller via en telefonisk samtale.</p>
+                    <p>Er du interesseret i at blive plejefamilie for Nordsjællands Kattehjælp, så skal du kontakte foreningens plejeansvarlige Joan Andersen på mail: <span class="boldText"><a href="mailto:joan@kattehjaelp.dk" class="mail">joan@kattehjaelp.dk</a></span>. I mailen skal du kort fortælle hvad du kan tilbyde af hjælp, hvordan du bor, din erfaring med katte osv. Du bliver herefter kontaktet enten pr. mail eller via en telefonisk samtale.</p>
                     <p>Vi søger primært plejefamilier, som er bosat i Nordsjælland og København og du skal være indstillet på at åbne dit hjem, for et besøg af en repræsentant fra foreningen. Før et eventuelt samarbejde indgås, så fremsendes der en kontrakt til underskrift med nedenstående punkter.</p>
                     <h3 class="greyText">Krav til vores plejefamilier:</h3>
                     <ol>
@@ -272,10 +272,10 @@ function drawAdopter(data) {
                 </article>
                 <article class="kravDel2">
                     <ol start="3">
-                        <li>Du skal som udgangspunkt have adgang til bil/kørsel ifm.dyrlægebesøg mv. Vi har frivillige der ofte kan hjælpe med kørsel,men dette kan ikke garanteres. Vi benytter primært vores fastedyrlæger i Espergærde og i Frederikssund.</li>
+                        <li>Du skal som udgangspunkt have adgang til bil/kørsel ifm. dyrlægebesøg mv. Vi har frivillige der ofte kan hjælpe med kørsel,men dette kan ikke garanteres. Vi benytter primært vores fastedyrlæger i Espergærde og i Frederikssund.</li>
                         <li>Du skal have mulighed for at isolere katten/killingen i et særskiltrum (evt. et badeværelse), som er adskilt for husets eventuelt andredyr de første dage af plejeperioden.</li>
-                        <li>Du skal være indstillet på at indrette din bolig, så den tilgodeserkattens/killingens behov: fri adgang til tørfoder, rent drikkevand,kradsetræ, kattebakke og flere forskellige gode ligge/gemmesteder.Katten/killingen må under <span class="boldText">ingen</span> omstændigheder komme ud!</li>
-                        <li>Foreningen sørger for tørfoder, vådfoder, kattegrus, legetøj mv.(medmindre dette fravælges), men plejefamilien skal være indstilletpå selv at afhente det på vores lager i Kvistgård eller Dronningmøllemedmindre andet aftales. </li>
+                        <li>Du skal være indstillet på at indrette din bolig, så den tilgodeser kattens/killingens behov: fri adgang til tørfoder, rent drikkevand,kradsetræ, kattebakke og flere forskellige gode ligge/gemmesteder. Katten/killingen må under <span class="boldText">ingen</span> omstændigheder komme ud!</li>
+                        <li>Foreningen sørger for tørfoder, vådfoder, kattegrus, legetøj mv. (medmindre dette fravælges), men plejefamilien skal være indstillet på selv at afhente det på vores lager i Kvistgård eller Dronningmølle medmindre andet aftales. </li>
                         <li>Foreningen afholder alle udgifter til dyrlæge samt loppe/ormekureog andre former for behandling. Den plejeansvarlige skal altidkontaktes, hvis plejeren vurderer et behov for dyrlægebesøg.Plejer skal løbende, holde den plejeansvarlige orienteret omhvordan det går med katten/killingen og rette henvendelse, hvisder opstår spørgsmål i plejeperioden</li>
                         <li>Såfremt katten/killingen forårsager skader på plejefamiliens hjem,interiør eller på personer, vil alle eventuelle udgifter ifm. dettetilfalde plejefamilien selv. Der er tavshedspligt for plejefamilierne,vedr. forhold omkring de katte man får i pleje, samt ting der bliveraftalt I foreningens regi. Det er foreningen der alene står forformidling af plejekatten til dens nye hjem. Dette sker dog somudgangspunkt altid i samråd med plejer.</li>
                     </ul>
@@ -339,7 +339,7 @@ function drawCat(data) {
                         <li><span class="boldText">Status: </span>${kat.acf.status}</li>
                         <li><span class="boldText">Pris: </span>${kat.acf.pris},-</li>
                         <li><span class="boldText">Plejeby: </span>${kat.acf.plejeby}</li>
-                        <li><span class="boldText">Formidler: </span>${kat.acf.formidler} - kontakt via <span class="boldText">${kat.acf.formidler_email}</span></li>
+                        <li><span class="boldText">Formidler: </span>${kat.acf.formidler} - kontakt via <a class="mail" href="mailto:${kat.acf.formidler_email}">${kat.acf.formidler_email}</a></li>
                     </ul>
                     <p><span class="boldText">Kastreret, vaccineret, chippet</span> og <span class="boldText">øremærket</span>.</p>
                     <p>Medbringer <span class="boldText">sundhedsbog</span> og madpakke til den første tid i nyt hjem.</p>
@@ -451,7 +451,7 @@ function drawStoetOs() {
                 <p>Du kan blive støttemedlem ved at udfylde blanketten på højre side. Medlemskabet giver adgang til foreningens generalforsamling i maj. </p>
                 <p>Der udsendes reminder om fornyelse af medlemskab hvert år i januar/februar måned via mail og Facebook. </p>
                 <p>Det er muligt at tegne erhvervsmedlemsskab og få firmalogo på hjemmesiden under samarbejdspartnere og sponsorer. Det koster kr. <span class="boldText">600,-</span> om året.</p>
-                <p>Send en mail til info@kattehjaelp.dk for nærmere aftale herom. </p>
+                <p>Send en mail til <a href="mailto:info@kattehjaelp.dk" class="mail">info@kattehjaelp.dk </a> for nærmere aftale herom. </p>
                 <p>Ved adoption af en af vores katte eller killinger er der inkluderet et års støttemedlemsskab i formidlingsgebyret. </p>
             </article>
             <form>
@@ -508,11 +508,12 @@ function drawForeningen() {
                 <p>Ved akutte sager med tilskadekomne katte skal du kontakte Dyrenes Beskyttelse på 1812 eller bringe katten til nærmeste dyrlæge.</p>
                 <h3>Bestyrelsen</h3>
                 <ul>
-                    <li><span class="boldText">Formand</span> Joan Andersen - joan@kattehjaelp.dk</li>
-                    <li><span class="boldText">Næstformand</span> Annette Nielsen - annette@kattehjaelp.dk</li>
-                    <li><span class="boldText">Kasserer</span> Kirsten Hammer - kirsten@kattehjaelp.dk</li>
-                    <li><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - margit@kattehjaelp.dk</li>
-                    <li><span class="boldText">5. bestyrelsesmedlem</span> Birgit Bauer - birgit@kattehjaelp.dk</li>
+                    <li><span class="boldText">Formand</span> Joan Andersen - <a href="mailto:joan@kattehjaelp.dk" class="mail">joan@kattehjaelp.dk</a></li>
+                    <li><span class="boldText">Næstformand</span> Annette Nielsen - <a href="mailto:annette@kattehjaelp.dk" class="mail">annette@kattehjaelp.dk</a></li>
+                    <li><span class="boldText">Kasserer</span> Kirsten Hammer - <a href="mailto:kirsten@kattehjaelp.dk" class="mail">kirsten@kattehjaelp.dk</a></li>
+                    <li><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - <a href="mailto:margit@kattehjaelp.dk" class="mail">margit@kattehjaelp.dk</a></li>
+                    <li><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - <a href="mailto:birgit@kattehjaelp.dk" class="mail">birgit@kattehjaelp.dk</a></li>
+
                 </ul>
             </article>
             <img src="${billeder[0].acf.kort.url}" alt="Kort">
@@ -574,20 +575,20 @@ function drawForeningen() {
 function drawKontakt() {
     let title = "<title>Kontakt - Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
-    let metaText = `<meta name="description" content="Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på info@kattehjaelp.dk og fortæl hvad du har lyst og mulighed for at bidrage med.">`
+    let metaText = `<meta name="description" content="Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på og fortæl hvad du har lyst og mulighed for at bidrage med.">`
     document.querySelector("head").innerHTML += metaText;
     let text = `
     <h1>Kontakt</h1>
         <section class="kontaktOsGrid white">
             <article>
                 <h2>Bestyrelsen i Nordsjællands Kattehjælp</h2>
-                <p><span class="boldText">Formand</span> Joan Andersen - joan@kattehjaelp.dk</p>
-                <p><span class="boldText">Næstformand</span> Annette Nielsen - annette@kattehjaelp.dk</p>
-                <p><span class="boldText">Kasserer</span> Kirsten Hammer - kirsten@kattehjaelp.dk</p>
-                <p><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - margit@kattehjaelp.dk</p>
-                <p><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - birgit@kattehjaelp.dk</p>
+                <p><span class="boldText">Formand</span> Joan Andersen - <a href="mailto:joan@kattehjaelp.dk">joan@kattehjaelp.dk</a></p>
+                <p><span class="boldText">Næstformand</span> Annette Nielsen - <a href="mailto:annette@kattehjaelp.dk">annette@kattehjaelp.dk</a></p>
+                <p><span class="boldText">Kasserer</span> Kirsten Hammer - <a href="mailto:kirsten@kattehjaelp.dk">kirsten@kattehjaelp.dk</a></p>
+                <p><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - <a href="mailto:margit@kattehjaelp.dk">margit@kattehjaelp.dk</a></p>
+                <p><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - <a href="mailto:birgit@kattehjaelp.dk">birgit@kattehjaelp.dk</a></p>
                 <p>Udover bestyrelsen har vi en række af frivillige der hjælper med pleje, kørsel, donationer og diverse ad hoc opgaver.</p>
-                <p>Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på info@kattehjaelp.dk og fortæl hvad du har lyst og mulighed for at bidrage med.</p>
+                <p>Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på <a href="mailto:info@kattehjaelp.dk">info@kattehjaelp.dk</a> og fortæl hvad du har lyst og mulighed for at bidrage med.</p>
             </article>
             <form>
                 <h3 class="blueText">Kontakt os</h3>

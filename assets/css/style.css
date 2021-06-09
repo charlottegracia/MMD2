@@ -159,6 +159,11 @@ section {
     }
 } 
 
+.mail {
+    text-decoration: none;
+    color: var(--green);
+}
+
 /* FRONTPAGE */
 .frontpageGrid {
     margin-bottom: 50px;
