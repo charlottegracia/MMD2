@@ -572,6 +572,10 @@ function drawForeningen() {
 }
 
 function drawKontakt() {
+    let title = "<title>Kontakt - Nordsjællands Kattehjælp</title>";
+    document.querySelector("head").innerHTML += title;
+    let metaText = `<meta name="description" content="Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på info@kattehjaelp.dk og fortæl hvad du har lyst og mulighed for at bidrage med.">`
+    document.querySelector("head").innerHTML += metaText;
     let text = `
     <h1>Kontakt</h1>
         <section class="kontaktOsGrid white">
