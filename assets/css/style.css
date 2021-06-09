@@ -702,7 +702,8 @@ button {
     display: none;
 }
 
-/* KONTAKT SIDE*/
+
+/* KONTAKT SIDE */
 .kontaktOsGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -725,6 +726,32 @@ button {
 
 .kontaktOsGrid ol li p {
     margin: 0 0 30px 0;
+}
+
+/* KAT I NØD */
+.katINoedGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+}
+
+.katINoedGrid p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.katINoedGrid h2 {
+    margin: 0;
+}
+
+.dropdownKatINoed {
+    margin: 10px 0;
+}
+
+.dropdownContentKatINoed {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
 }
 
 /* FOOTER */

@@ -41,7 +41,7 @@ function createPage() {
     .then(response => response.json()) //converts response to JSON object
     .then(data => { //passing data through arrow function
         drawNav();
-        if (url.indexOf('adopter') > -1) {
+        /*if (url.indexOf('adopter') > -1) {
             drawAdopter(data);
         } else if (url.indexOf('kat-i-noed') > -1) {
             drawKatINoed();
@@ -57,7 +57,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        }
+        }*/
         drawFooter();
     })
     .catch(error => {
@@ -685,4 +685,20 @@ function drawKontakt() {
 
 function dropdown() {
     document.getElementById("dropdownForeningen").classList.toggle('hide');
+}
+
+function dropdownKatiNoed(n) {
+    if (n == 1) {
+        document.getElementById("katINoed1").classList.toggle('hide');
+    } else if (n == 2) {
+        document.getElementById("katINoed2").classList.toggle('hide');
+    } else if (n == 3) {
+        document.getElementById("katINoed3").classList.toggle('hide');
+    } else if (n == 4) {
+        document.getElementById("katINoed4").classList.toggle('hide');
+    } else if (n == 5) {
+        document.getElementById("katINoed5").classList.toggle('hide');
+    } else if (n == 6) {
+        document.getElementById("katINoed6").classList.toggle('hide');
+    } 
 }
