@@ -68,34 +68,63 @@ function createPage() {
 function drawNav() {
     let text = "";
     text += `
-        <nav>
-            <a href="index.html">
-                <img src="assets/images/NSK logo nyt.jpeg" alt="NSK Logo">
-                <h1>Nordsjællands Kattehjælp</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="index.html?adopter">Adopter</a>
-                </li>
-                <li>
-                    <a href="index.html?stoet-os">Støt os</a>
-                </li>
-                <li>
-                    <a href="index.html?kat-i-noed">Kat i nød</a>
-                </li>
-                <li>
-                    <a href="index.html?foreningen">Foreningen</a>
-                </li>
-                <li>
-                    <a href="index.html?samarbejde">Samarbejde</a>
-                </li>
-                <li>
-                    <a href="index.html?kontakt">Kontakt</a>
-                </li>
-            </ul>
-        </nav>
+    <nav>
+        <a href="index.html">
+            <img src="assets/images/NSK logo nyt.jpeg" alt="NSK Logo">
+            <h1>Nordsjællands Kattehjælp</h1>
+        </a>
+        <ul>
+            <li>
+                <a href="index.html?adopter">Adopter</a>
+            </li>
+            <li>
+                <a href="index.html?stoet-os">Støt os</a>
+            </li>
+            <li>
+                <a href="index.html?kat-i-noed">Kat i nød</a>
+            </li>
+            <li>
+                <a href="index.html?foreningen">Foreningen</a>
+            </li>
+            <li>
+                <a href="index.html?samarbejde">Samarbejde</a>
+            </li>
+            <li>
+                <a href="index.html?kontakt">Kontakt</a>
+            </li>
+        </ul>
+        <i class="navIkon fas fa-bars" onclick="dropdownMobile()"></i>
+    </nav>
+    <ul class="dropdownMobile" id="navMobile">
+        <li>
+            <a href="index.html?adopter">Adopter</a>
+        </li>
+        <li>
+            <a href="index.html?stoet-os">Støt os</a>
+        </li>
+        <li>
+            <a href="index.html?kat-i-noed">Kat i nød</a>
+        </li>
+        <li>
+            <a href="index.html?foreningen">Foreningen</a>
+        </li>
+        <li>
+            <a href="index.html?samarbejde">Samarbejde</a>
+        </li>
+        <li>
+            <a href="index.html?kontakt">Kontakt</a>
+        </li>
+    </ul>
     `;
     document.querySelector('header').innerHTML = text;
+}
+
+function dropdownMobile() {
+    if (document.getElementById("navMobile").style.display === "block") {
+        document.getElementById("navMobile").style.display = "none";
+    } else {
+        document.getElementById("navMobile").style.display = "block"
+    }
 }
 
 function drawFooter() {

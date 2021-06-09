@@ -50,7 +50,7 @@ body {
 /* HEADER NAVIGATION */
 
 header {
-    padding: 5px;
+    padding: 0;
     background-color: var(--green);
 }
 
@@ -76,6 +76,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
 }
 
 nav ul {
@@ -107,14 +108,71 @@ nav ul li a:hover:after { transform: scaleX(1); }
 
 /*nav li a:hover {border-bottom: solid 2px var(--white);} */
 
+.dropdownMobile {
+    background-color: var(--white);
+    margin: 0;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.dropdownMobile li {
+    font-size: 25px;
+    padding: 10px;
+    text-align: right;
+}
+
+.dropdownMobile li a {
+    text-decoration: none;
+    color: var(--darkgreen);
+}
+
+.navIkon {
+    color: var(--white);
+    padding: 0 20px;
+    display: none;
+}
+
+#navMobile {
+    display: none;
+}
+
 @media screen and (max-width: 812px) {
     nav ul {
         display: none;
     }
 
     header nav a img {
-        width: 13vw;
+        width: 10vw;
         padding: 0 1vw;
+    }
+
+    #navMobile {
+        display: none;
+    }
+
+    .navIkon {
+        font-size: 25px;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 813px) and (max-width: 1200px) {
+    nav ul {
+        display: none;
+    }
+
+    header nav a img {
+        width: 6vw;
+        padding: 0 1vw;
+    }
+
+    #navMobile {
+        display: none;
+    }
+
+    .navIkon {
+        font-size: 27px;
+        display: block;
     }
 }
 
@@ -199,7 +257,6 @@ main section a img {
     height: 100%;
     object-fit: cover;
 }
-
 
 @media screen and (max-width: 812px) {
     .frontpageGrid {
@@ -699,3 +756,4 @@ footer {
 .cursive {
     font-style: italic;
 }
+  
