@@ -702,6 +702,46 @@ button {
     display: none;
 }
 
+@media screen and (min-width: 1050px) and (max-width: 1200px) {
+    .foreningenGrid {
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .foreningenGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .dropdown {
+        color: white;
+        padding: 5px 10px;
+        margin: 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        width: 95%;
+    }
+
+    .dropdownContentForeningen {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        border-radius: 5px;
+        width: 95%;
+        padding: 10px;
+    }
+
+}
+
 
 /* KONTAKT SIDE */
 .kontaktOsGrid {
