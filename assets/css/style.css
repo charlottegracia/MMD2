@@ -234,6 +234,7 @@ section {
 
 main section a {
     text-decoration: none;
+    border-radius: 5px;
 }
 
 main section a h2 {
@@ -256,6 +257,7 @@ main section a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 812px) {
@@ -287,6 +289,10 @@ main section a img {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
+}
+
+.samarbejdeImg {
+    border-radius: 5px;
 }
 
 .samarbejdsgrid img {
@@ -331,6 +337,7 @@ main section a img {
     background-color: var(--blue);
     float: left;
     width: 100%;
+    border-radius: 5px;
 }
 
 .katteOverblikGrid p {
@@ -374,6 +381,10 @@ article img {
     height: 49%;
     object-fit: cover;
     display: inline;
+}
+
+.venteliste {
+    border-radius: 5px;
 }
 
 .kravDel2 {
@@ -554,6 +565,7 @@ button {
 .katInfo {
     background-color: var(--white);
     border-radius: 5px;
+    height: 82%;
 }
 
 .katInfo h2 {
@@ -658,6 +670,7 @@ button {
 
 .foreningenGrid article {
     padding: 20px 20px 0 20px;
+    border-radius: 5px;
 }
 
 .foreningenGrid h2 {
@@ -680,6 +693,7 @@ button {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 5px;
 }
 
 .dropdown {
@@ -754,6 +768,7 @@ button {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 60px;
+    border-radius: 5px;
 }
 
 .gdprOverskrift {
