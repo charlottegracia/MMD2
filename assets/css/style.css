@@ -728,6 +728,41 @@ button {
     margin: 0 0 30px 0;
 }
 
+@media screen and (max-width: 812px) {
+    .kontaktOsGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        column-gap: 60px;
+    }
+
+    .blueText {
+        padding: 25px;
+    }
+
+    .kontaktForm {
+        margin: 0 8px;
+    }
+    
+    .gdprOverskrift {
+        padding: 20px;
+    }
+
+    .blue {
+        margin: 20px 8px;
+    }
+
+    
+
+}
+
+@media screen and (min-width: 813px) and (max-width: 1200px) {
+    .gdprOverskrift {
+        padding: 20px;
+    }
+}
+
+
 /* KAT I NØD */
 .katINoedGrid {
     display: grid;
