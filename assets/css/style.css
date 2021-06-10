@@ -385,10 +385,11 @@ article img {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        grid-gap: 40px 5px;
     }
 
     .adoptionAfKatte {
-        margin: 0px;
+        margin: 0;
         padding: 0;
         display: grid;
         grid-template-columns: 1fr;
@@ -530,6 +531,11 @@ button {
 
     .extrawhite article {
         padding: 0;
+    }
+
+    .MP image {
+        width: 20%;
+        height: auto;
     }
 }
 

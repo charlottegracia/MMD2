@@ -470,7 +470,7 @@ function drawStoetOs() {
                 </address>
             </article>
             <article>
-                <img src="assets/images/mobilepay.png" alt="Mobilepay - Nordsjællands Kattehjælp">
+                <img src="assets/images/mobilepay.png" alt="Mobilepay - Nordsjællands Kattehjælp" class="MP">
             </article>
         </section>
         <section class="stoet-osGrid extrawhite">
