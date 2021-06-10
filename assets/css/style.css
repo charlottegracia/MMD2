@@ -740,10 +740,14 @@ button {
         padding: 25px;
     }
 
-    .kontaktForm {
-        margin: 0 8px;
+    input[type=text], input[type=number], textarea {
+        width:90%;
+        margin: 10px 5px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
     }
-    
+
     .gdprOverskrift {
         padding: 20px;
     }

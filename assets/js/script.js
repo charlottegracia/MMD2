@@ -675,9 +675,9 @@ function drawKontakt() {
             </article>
             <form>
                 <h3 class="blueText">Kontakt os</h3>
-                    <input class="extrawhite kontaktForm" type="text" placeholder="Navn">
-                    <input class="extrawhite kontaktForm" type="text" placeholder="E-mail">
-                    <textarea class="extrawhite kontaktForm" placeholder="Din besked..." style="height:100px"></textarea>
+                    <input class="extrawhite" type="text" placeholder="Navn">
+                    <input class="extrawhite" type="text" placeholder="E-mail">
+                    <textarea class="extrawhite" placeholder="Din besked..." style="height:100px"></textarea>
                 <button class="blue" type="button">Send besked</button>
             </form>   
         </section>
