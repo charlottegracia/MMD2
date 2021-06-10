@@ -57,7 +57,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        }
+        } 
         drawFooter();
     })
     .catch(error => {
@@ -516,37 +516,44 @@ function drawKatINoed() {
                     <p>I første omgang, er det vigtigt at sikre sig at killingen virkelig er forladt af deres mor. Alt efter killingens alder kan der gå 3-8 timer imellem at moderkatten vender tilbage for at die sine killinger.</p>
                     <p>Herefter er det meget vigtigt at en kold og forkommen killings kropstemperatur er oppe på 35 grader før man giver den mad. Læg evt. en flaske varmt vand ned til den som varmedunk (pak flasken ind i håndklæde). I akutte tilfælde gives fysiologisk sukkervand (fremstilles af 55 g. druesukker opløst i 1 liter vand - hvis du ikke har druesukker, kan 1 dl. puddersukker anvendes i stedet).</p>
                     <p>Når killingen har opnået normal kropstemperatur kan den fodres med modermælkerstatning. Husk at der både skal bøvses af og rengøres bagi efter hvert måltid. Se evt. videoen øverst.</p>
-                    <p>Nordjyllands Hittekilling har lavet en fin lille anvisning på pleje og pasning af killinger på deres hjemmeside som du finder ved <span class="boldText">at klikke her</span></p>
+                    <p>Nordjyllands Hittekilling har lavet en fin lille anvisning på pleje og pasning af killinger på deres hjemmeside som du finder ved <a class="mail" target="_blank" href="https://www.nordjyllandshittekilling.dk/">at klikke her</a></p>
+                    
                 </article>
             </section>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(2)">Tilløberkat der er kontaktsøgende <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed2">
-                    <h2>hej</h2>
+                    <p>Tjek først om katten er øremærket eller chippet. Øremærke fremgår tydeligere ved at gnide lidt madolie på øret eller ved at lyse bagfra på øret med en lommelygte. Kan du aflæse øremærket, så kan du finde ejeren i et af de danske registre (se links her på siden). Sæt et ? istedet for ulæselige tegn. Chip skal tjekkes ved dyrlægen med en chipscanner.</p>
+                    <p>Er katten ikke mærket eller er det ikke muligt at finde frem til ejer, så skal katten fremlyses med de nuværende regler. Sæt opslag op i nærområdet i minimum 5 dage, efterlys den på Facebook i lokale grupper.</p>
+                    <p class="cursive">Der forventes at komme ny lovgivning pr. 1/7-2121 hvor ikke mærkede katte automatisk betragtes som ejerløse og derfor ikke længere skal fremlyses, men kan indleveres på et internat.</p>
                 </article>
             </section>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(3)">Vildkat/vildtlevende kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed3">
-                    <h2>hej</h2>
+                    <p>Kontakt din kommune for at få en rekvisitation til indfangning via Kattens Værn. Desværre har mange kommuner fravalgt samarbejdet med Kattens Værn og udgiften påhviler derfor dig som privatperson. Kattens Værn hjælper med indfangning og aflivning, men du kan også vælge at få katten dyrlægetjekket, neutraliseret, mærket og genudsat med dig som fodervært/ejer. Læs mere på Kattens Værns hjemmeside <a class="mail" target="_blank" href="https://kattens-vaern.dk/vildekatte">her</a></p>
+                    <p>Dyrenes Beskyttelse hjælper som udgangspunkt kun vildtlevende katte hvis de er tilskadekomne.</p>
+                    <p>Nordsjællands Kattehjælp kan desværre ikke hjælpe med pleje til voksne "vildkatte". Vi modtager kun tamme eller delvis tamme, ejerløse katte. Vi hjælper dog meget gerne med genudsætning, hvis du er indstillet på at betale et mindre beløb til dækning af dyrlægeudgifterne og indgå en foderværtaftale. Katten genudsættes i dit navn og er herefter dit ansvar som fodervært. I særlige tilfælde har vi også mulighed for at yde økonomisk hjælp ved lidt større genudsætningsprojekter. Kontakt os på <a href="mailto:info@kattehjaelp.dk" class="mail">info@kattehjaelp.dk</a> for at høre nærmere.</p>
                 </article>
             </section>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(4)">Tilskadekommende kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed4">
-                    <h2>hej</h2>
+                    <p>Ved nødstedt, tilskadekommen eller påkørt kat, så bring selv katten til nærmeste dyrlæge eller kontakt Dyrenes Beskyttelse på deres akutnummer <a class="mail" href="tel:1812">1812</a>. Man må IKKE selv aflive et påkørt dyr. </p>
                 </article>
             </section>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(5)">Trafikdræbt kat <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed5">
-                    <h2>hej</h2>
+                    <p>Er katten allerede død og er den øremærket, så kan du finde ejeren via de danske registre (se links her på siden). Sæt et ? ved ulæselige tegn. Er det ikke muligt at finde en ejer, så kan du kontakte Falck for at få afhentet katten og lav evt. et opslag i en lokal facebook gruppe så ejer får besked.</p>
                 </article>
             </section>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(6)">Katteregistre, internater & foreninger <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed6">
-                    <h2>hej</h2>
+                    <h3>Katteregistre</h3>
+                    <p><a class="mail" target="_blank" href="http://www.dansk-katteregister.dk/">Dansk Katteregister</a></p>
+                    <p><a class="mail" target="_blank" href="https://www.katteregister.dk/s%C3%B8g-efter-kat">Katteregister</a></p>
                 </article>
             </section>
         </section>
@@ -563,6 +570,7 @@ function drawKatINoed() {
             <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs her hvorfor: http://www.fivcats.com/FIV/fiv_kittens.html</p>
         </section>
     </section>
+
     `;
     document.querySelector('main').innerHTML = text;
 }
@@ -665,13 +673,13 @@ function drawKontakt() {
         <section class="kontaktOsGrid white">
             <article>
                 <h2>Bestyrelsen i Nordsjællands Kattehjælp</h2>
-                <p><span class="boldText">Formand</span> Joan Andersen - <a href="mailto:joan@kattehjaelp.dk">joan@kattehjaelp.dk</a></p>
-                <p><span class="boldText">Næstformand</span> Annette Nielsen - <a href="mailto:annette@kattehjaelp.dk">annette@kattehjaelp.dk</a></p>
-                <p><span class="boldText">Kasserer</span> Kirsten Hammer - <a href="mailto:kirsten@kattehjaelp.dk">kirsten@kattehjaelp.dk</a></p>
-                <p><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - <a href="mailto:margit@kattehjaelp.dk">margit@kattehjaelp.dk</a></p>
-                <p><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - <a href="mailto:birgit@kattehjaelp.dk">birgit@kattehjaelp.dk</a></p>
+                <p><span class="boldText">Formand</span> Joan Andersen - <a class="mail" href="mailto:joan@kattehjaelp.dk">joan@kattehjaelp.dk</a></p>
+                <p><span class="boldText">Næstformand</span> Annette Nielsen - <a class="mail" href="mailto:annette@kattehjaelp.dk">annette@kattehjaelp.dk</a></p>
+                <p><span class="boldText">Kasserer</span> Kirsten Hammer - <a class="mail" href="mailto:kirsten@kattehjaelp.dk">kirsten@kattehjaelp.dk</a></p>
+                <p><span class="boldText">4. bestyrelsesmedlem</span> Margit Rand - <a class="mail" href="mailto:margit@kattehjaelp.dk">margit@kattehjaelp.dk</a></p>
+                <p><span class="boldText">5. bestyrelsesmedlem </span>Birgit Bauer - <a class="mail" href="mailto:birgit@kattehjaelp.dk">birgit@kattehjaelp.dk</a></p>
                 <p>Udover bestyrelsen har vi en række af frivillige der hjælper med pleje, kørsel, donationer og diverse ad hoc opgaver.</p>
-                <p>Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på <a href="mailto:info@kattehjaelp.dk">info@kattehjaelp.dk</a> og fortæl hvad du har lyst og mulighed for at bidrage med.</p>
+                <p>Har du lyst til at hjælpe os med at hjælpe kattene, så send os en mail på <a class="mail" href="mailto:info@kattehjaelp.dk">info@kattehjaelp.dk</a> og fortæl hvad du har lyst og mulighed for at bidrage med.</p>
             </article>
             <form>
                 <h3 class="blueText">Kontakt os</h3>
