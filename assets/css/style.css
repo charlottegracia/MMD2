@@ -738,6 +738,7 @@ button {
 
     .blueText {
         padding: 25px;
+        margin-bottom: 1px;
     }
 
     input[type=text], input[type=number], textarea {
@@ -753,7 +754,7 @@ button {
     }
 
     .blue {
-        margin: 20px 8px;
+        margin: 15px 5px;
     }
 
     
