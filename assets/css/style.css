@@ -513,7 +513,7 @@ button {
     box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.137);
 }
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width: 700px) {
     .stoet-osGrid {
         display: unset;
         display: grid;
@@ -533,15 +533,14 @@ button {
         padding: 0;
     }
 
-    .MP image {
-        width: 20%;
+    .stoet-osGrid img {
+        width: 80%;
         height: auto;
+        margin: auto;
+        display: block;
     }
-}
-
-@media screen and (min-width: 813px) and (max-width: 1200px) {
     
-} 
+}
 
 /* SIDE FOR SPECIFIK KAT */ 
 
