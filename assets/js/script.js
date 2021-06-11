@@ -512,6 +512,7 @@ function drawKatINoed() {
     }) //specifies the url to fetch() method with the API key
     .then(response => response.json()) //converts response to JSON object
     .then(billeder => { //passing data through arrow function
+        console.log(billeder);
         let text = "";
         text += `
         <h1>Kat i nød</h1>
@@ -623,7 +624,7 @@ function drawKatINoed() {
                 </article>
             </section>
         </section>
-        <img src="assets/images/lol.jpeg" alt="lol">
+        <img class="oremaerke" src="${billeder[0].acf.oremaerke.url}" alt="${billeder[0].acf.oremaerke.name}">
         <section>
             <h3 class="greenText">FIV (For stadie til katteaids)</h3>
             <p>Fiv er et forstadie til katteaids og behøver således ikke nødvendigvis at udvikle sig til en sygdom. Fiv opdages via en blodprøve hos dyrlægen og betyder i første omgang, at din kat kan være mere modtagelig overfor infektioner,  få feber, hævede lymfeknuder osv. Når/hvis sygdommen for alvor bryder ud, så vil immunforsvaret nedbrydes af virus. Således får andre sygdomsforløb mulighed for at udvikle sig og symptomerne kan derfor være mange forskellige.</p>
@@ -634,6 +635,11 @@ function drawKatINoed() {
         <section>
             <p>I England findes der et ældre par der gennem livet har taget 80 fiv katte ind som deres egne (fiv shelter). De har udgivet en lille bog (booklet) med deres erfaringer omkring katte med fiv. Den er gratis og kan downloades her.</p>
             <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs her hvorfor: http://www.fivcats.com/FIV/fiv_kittens.html</p>
+            <section class="skipperOgJarlGrid">
+                <img src="${billeder[0].acf.skipper_og_jarl.billede1.url}" alt="${billeder[0].acf.oremaerke.name}">
+                <img src="${billeder[0].acf.skipper_og_jarl.billede2.url}" alt="${billeder[0].acf.oremaerke.name}">
+            </section>
+            <p class="billedTekst">Skipper på lammeskind og Jarl i vindueskarmen. Begge brugte hankatte fra Hundested Havn med fiv - som i dag lever det fede katteliv i lejlighed.</p>
         </section>
     </section>
         `;

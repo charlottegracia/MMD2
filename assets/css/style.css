@@ -768,6 +768,24 @@ button {
     padding: 10px 20px;
 }
 
+.oremaerke {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.skipperOgJarlGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    margin: 0;
+}
+
+.billedTekst {
+    font-size: 15px;
+    margin: 0;
+}
+
 /* FOOTER */
 footer {
     background-color: var(--darkgreen);
