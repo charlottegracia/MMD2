@@ -731,9 +731,9 @@ button {
 /* KAT I NØD */
 .katINoedGrid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 30px;
+    column-gap: 50px;
 }
 
 .katINoedGrid p {
@@ -748,10 +748,42 @@ button {
     margin: 10px 0;
 }
 
+.dropdownKatINoed h3{
+    margin: 10px 0 0 0;
+    font-size: 20px;
+}
+
+.dropdownKatINoed address {
+    padding-bottom: 10px;
+}
+
+.dropdownKatINoed address p {
+    padding: 0px;
+    margin: 5px 0;
+}
+
 .dropdownContentKatINoed {
     border-radius: 5px;
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    padding: 10px 20px;
+}
+
+.oremaerke {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.skipperOgJarlGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    margin: 0;
+}
+
+.billedTekst {
+    font-size: 15px;
+    margin: 0;
 }
 
 /* FOOTER */
