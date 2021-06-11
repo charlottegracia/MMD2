@@ -7,6 +7,7 @@ const apiUserCredentials = {
 const katId = 27;
 const stockImagesId = 28;
 const samarbejdspartnereId = 29;
+const katINoedId = 30;
 const foreningenId = 32;
 
 getToken();
@@ -57,7 +58,7 @@ function createPage() {
             drawKontakt();
         } else {
             drawFrontpage(data);
-        } 
+        }
         drawFooter();
     })
     .catch(error => {
@@ -500,24 +501,31 @@ function drawStoetOs() {
 }
 
 function drawKatINoed() {
-    let title = `<title>Kat i nød - Nordsjællands Kattehjælp</title>`;
-    let metaText = `<meta name="description" content="INDSÆT TEKST">`
+    let title = "<title>Kat i nød - Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
+    let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.">`
     document.querySelector("head").innerHTML += metaText;
-    let text = "";
-    text += `
-    <h1>Kat i nød</h1>
-    <section class="katINoedGrid">
+    fetch(`${apiUrl}posts?status=private&categories=${katINoedId}&per_page=50`, {
+        headers: {
+            'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
+        }
+    }) //specifies the url to fetch() method with the API key
+    .then(response => response.json()) //converts response to JSON object
+    .then(billeder => { //passing data through arrow function
+        let text = "";
+        text += `
+        <h1>Kat i nød</h1>
+        <section class="katINoedGrid">
         <section>
             <h2>Katte i nød</h2>
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(1)">Hvad gør jeg, hvis jeg finder en forladt killing? <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed1">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/V50NMZsFIco?start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p>I første omgang, er det vigtigt at sikre sig at killingen virkelig er forladt af deres mor. Alt efter killingens alder kan der gå 3-8 timer imellem at moderkatten vender tilbage for at die sine killinger.</p>
                     <p>Herefter er det meget vigtigt at en kold og forkommen killings kropstemperatur er oppe på 35 grader før man giver den mad. Læg evt. en flaske varmt vand ned til den som varmedunk (pak flasken ind i håndklæde). I akutte tilfælde gives fysiologisk sukkervand (fremstilles af 55 g. druesukker opløst i 1 liter vand - hvis du ikke har druesukker, kan 1 dl. puddersukker anvendes i stedet).</p>
                     <p>Når killingen har opnået normal kropstemperatur kan den fodres med modermælkerstatning. Husk at der både skal bøvses af og rengøres bagi efter hvert måltid. Se evt. videoen øverst.</p>
                     <p>Nordjyllands Hittekilling har lavet en fin lille anvisning på pleje og pasning af killinger på deres hjemmeside som du finder ved <a class="mail" target="_blank" href="https://www.nordjyllandshittekilling.dk/">at klikke her</a></p>
-                    
                 </article>
             </section>
             <section class="dropdownKatINoed">
@@ -551,9 +559,67 @@ function drawKatINoed() {
             <section class="dropdownKatINoed">
                 <h4 class="blue dropdown" onclick="dropdownKatiNoed(6)">Katteregistre, internater & foreninger <i class="fas fa-chevron-down"></i></h4> <!-- ikon fra FontAwesome-->
                 <article class="hide white dropdownContentKatINoed" id="katINoed6">
-                    <h3>Katteregistre</h3>
+                    <h3>Katteregistre:</h3>
                     <p><a class="mail" target="_blank" href="http://www.dansk-katteregister.dk/">Dansk Katteregister</a></p>
                     <p><a class="mail" target="_blank" href="https://www.katteregister.dk/s%C3%B8g-efter-kat">Katteregister</a></p>
+                    <h3>Internater og foreninger i Nordsjælland:</h3>
+                    <address>
+                        <p><a class="boldText mail" target="_blank" href="https://inges-kattehjem.dk/">Inges Kattehjem</a></p>
+                        <p>Ejbydalsvej 260</p>
+                        <p>2600 Glostrup</p>
+                        <p><a class="blueText" href="tel:44853535">Tlf. 44 85 35 35</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" target="_blank" href="https://dyrevaernet.dk/">Dyreværnet</a></p>
+                        <p>Islevdalvej 85</p>
+                        <p>2610 Rødovre</p>
+                        <p><a class="blueText" href="tel:44946695">Tlf. 44 94 66 95</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" href="https://kattens-vaern.dk/">Kattens Værn</a></p>
+                        <p>Sandager 11</p>
+                        <p>2605 Brøndby</p>
+                        <p><a class="blueText" href="tel:38881200">Tlf. 38 88 12 00</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" href="http://www.roskildeinternat.dk">Roskilde Internat (Dyrenes Beskyttelse)</a></p>
+                        <p>Darupvej 131</p>
+                        <p>4000 Roskilde</p>
+                        <p><a class="blueText" href="tel:20527428">Tlf: 20 52 74 28</a></p>
+                    </address>
+                    <h3>Internater og foreninger i Nordsjælland:</h3>
+                    <p><a class="mail" target="_blank" href="https://www.facebook.com/havnekat/">Hundested Havnekatte</a></p>
+                    <p><a class="mail" target="_blank" href="https://vestegnenskattehjalp.wixsite.com/website">Vestegnens Kattehjælp</a></p>
+                    <p><a class="mail" target="_blank" href="https://foreningensimba.dk/">Foreningen Simba</a></p>
+                    <p><a class="mail" target="_blank" href="https://www.facebook.com/Foreningen-Sydhavs%C3%B8ernes-Katte-SOS-vores-katte-og-killinger-847775225579113/">Sydhavsøerne Kattehjælp SOS</a></p>
+                    <h3>Øvrige Sjælland:</h3>
+                    <address>
+                        <p><a class="boldText mail" href="https://inges-kattehjem.dk/">Inges Kattehjem i Næstved</a></p>
+                        <p>Kasernevej 1</p>
+                        <p>4700 Næstved</p>
+                        <p><a class="blueText" href="tel:44853555">Tlf. 44 85 35 55</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" href="http://kvslagelse.dk/">Kattens Værn i Slagelse</a></p>
+                        <p>Rugvænget 12</p>
+                        <p>4200 Slagelse</p>
+                        <p><a class="blueText" href="tel:58505144">Tlf. 58 50 51 44</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" href="vestsjaelland-hundepension.dk">Vestsjællands Internat (Dyrenes Beskyttelse)</a></p>
+                        <p>Stenager 2</p>
+                        <p>4460 Snertinge</p>
+                        <p><a class="blueText" href="tel:59293600">Tlf. 59 29 36 00</a></p>
+                    </address>
+                    <address>
+                        <p><a class="boldText mail" href="vestsjaelland-hundepension.dk">Fuglebjerg Kattehjem (Dyrenes Beskyttelse)</a></p>
+                        <p>Sandvedvej 36</p>
+                        <p>4250 Fuglebjerg</p>
+                        <p><a class="blueText" href="tel:60631650">Tlf. 60 63 16 50</a></p>
+                    </address>
+                    <h3>Øvrige Sjælland:</h3>
+                    <p><a class="mail" target="_blank" href="https://www.karlakattehjem.dk/">Karla Kattehjem</a></p>
+                    <p><a class="mail" target="_blank" href="https://www.tullebo.dk/">Tullebo Kattehjem</a></p>
                 </article>
             </section>
         </section>
@@ -570,9 +636,12 @@ function drawKatINoed() {
             <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs her hvorfor: http://www.fivcats.com/FIV/fiv_kittens.html</p>
         </section>
     </section>
-
-    `;
-    document.querySelector('main').innerHTML = text;
+        `;
+        document.querySelector('main').innerHTML = text;
+    })
+    .catch(error => {
+        console.log(error); // logs any errors
+    })
 }
 
 function drawForeningen() {
