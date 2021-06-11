@@ -12,6 +12,10 @@ const foreningenId = 32;
 
 getToken();
 
+function js_Load(){
+    document.body.style.visibility='visible';
+}
+
 function getToken() {
     fetch('https://charlottegracia.dk/wp-json/jwt-auth/v1/token', {
         method: 'POST',
@@ -60,6 +64,7 @@ function createPage() {
             drawFrontpage(data);
         }
         drawFooter();
+        js_Load();
     })
     .catch(error => {
         console.log(error); // logs any errors
