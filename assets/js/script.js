@@ -758,9 +758,9 @@ function drawKontakt() {
             </article>
             <form>
                 <h3 class="blueText">Kontakt os</h3>
-                    <input class="extrawhite" type="text" placeholder="Navn">
-                    <input class="extrawhite" type="text" placeholder="E-mail">
-                    <textarea class="extrawhite" placeholder="Din besked..." style="height:100px"></textarea>
+                <input class="test extrawhite" type="text" placeholder="Navn">
+                <input class="test extrawhite" type="text" placeholder="E-mail">
+                <textarea class="test extrawhite" placeholder="Din besked..." style="height:100px"></textarea>
                 <button class="blue" type="button">Send besked</button>
             </form>   
         </section>
@@ -840,21 +840,16 @@ function dropdownKatiNoed(n) {
     } 
 }
 
-
-
-
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    var mybutton = document.getElementById("top");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
