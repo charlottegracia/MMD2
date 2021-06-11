@@ -567,12 +567,12 @@ button {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
+    margin: 0;
 }
 
 .katInfo {
     background-color: var(--white);
     border-radius: 5px;
-    height: 82%;
 }
 
 .katInfo h2 {
