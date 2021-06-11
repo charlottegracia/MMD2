@@ -503,7 +503,7 @@ function drawStoetOs() {
 function drawKatINoed() {
     let title = "<title>Kat i nød - Nordsjællands Kattehjælp</title>";
     document.querySelector("head").innerHTML += title;
-    let metaText = `<meta name="description" content="Nordsjællands Kattehjælp er et stærkt netværk af frivillige, private plejefamilier, der ønsker at forbedre forholdene for ejerløse katte i Nordsjælland.">`
+    let metaText = `<meta name="description" content="Ved nødstedt, tilskadekommen eller påkørt kat, så bring selv katten til nærmeste dyrlæge eller kontakt Dyrenes Beskyttelse på deres akutnummer 1812. Man må IKKE selv aflive et påkørt dyr.">`
     document.querySelector("head").innerHTML += metaText;
     fetch(`${apiUrl}posts?status=private&categories=${katINoedId}&per_page=50`, {
         headers: {
