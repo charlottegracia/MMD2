@@ -12,10 +12,6 @@ const foreningenId = 32;
 
 getToken();
 
-function js_Load(){
-    document.body.style.visibility='visible';
-}
-
 function getToken() {
     fetch('https://charlottegracia.dk/wp-json/jwt-auth/v1/token', {
         method: 'POST',
@@ -64,11 +60,13 @@ function createPage() {
             drawFrontpage(data);
         }
         drawFooter();
-        js_Load();
+        //js_Load();
     })
     .catch(error => {
         console.log(error); // logs any errors
     })
+
+    //js_Load();
 }
 
 function drawNav() {
@@ -121,8 +119,13 @@ function drawNav() {
             <a href="index.html?kontakt">Kontakt</a>
         </li>
     </ul>
+    <img class="social" src="assets/images/pilop.png" onclick="backToTop()" id="backToTopButton">
+    <a target="_blank" href="https://www.facebook.com/Kattehjaelpen/"> <img class="social social1" src="assets/images/facebookside.png" alt="facebookside"></a>
+    <a target="_blank" href="https://www.facebook.com/groups/720551148010976/"> <img class="social social2" src="assets/images/facebookgruppe.png" alt="facebookgruppe"></a>
+    <a target="_blank" href="https://www.instagram.com/kattehjaelp_/"> <img class="social social3" src="assets/images/instagram.png" alt="instagram"></a>
+    <a target="_blank" href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social social4" src="assets/images/dba.png" alt="dba"></a>
     `;
-    document.querySelector('header').innerHTML += text;
+    document.querySelector('header').innerHTML = text;
 }
 
 function dropdownMobile() {
@@ -185,7 +188,7 @@ function drawFrontpage(data) {
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Kat"></a>`;
         }
         text += `
-            <a class="green" href="#">
+            <a class="green" href="index.html?kat-i-noed">
                 <h2>Kat i nød</h2>
                 <h3 class="darkgreenText">Kattehjælp / FIV</h3>
             </a>
@@ -845,20 +848,18 @@ function dropdownKatiNoed(n) {
     } 
 }
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scroll()};
 
-function scrollFunction() {
-    var mybutton = document.getElementById("top");
+function scroll() {
+    let button = document.getElementById("backToTopButton");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        button.style.display = "block";
     } else {
-        mybutton.style.display = "none";
+        button.style.display = "none";
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" /> <!-- favicon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/4d151777d8.js" crossorigin="anonymous"></script> <!-- font awesome -->
-    <script src="assets/js/script.js" defer></script>
-</head>
-<body style="visibility: hidden;">
-    <header>
-        <img class="social" src="assets/images/pilop.png" onclick="topFunction()" id="top">
-        <a target="_blank" href="https://www.facebook.com/Kattehjaelpen/"> <img class="social social1" src="assets/images/facebookside.png" alt="facebookside"></a>
-        <a target="_blank" href="https://www.facebook.com/groups/720551148010976/"> <img class="social social2" src="assets/images/facebookgruppe.png" alt="facebookgruppe"></a>
-        <a target="_blank" href="https://www.instagram.com/kattehjaelp_/"> <img class="social social3" src="assets/images/instagram.png" alt="instagram"></a>
-        <a target="_blank" href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social social4" src="assets/images/dba.png" alt="dba"></a>
-    </header>
-    <main></main>
-    <footer></footer>
-</body>
+    <head>
+        <style>
+            /* FOUC fix (flash of unstyled content) KILDE: https://dev.to/markmercier/combatting-flashes-of-unstyled-content-k31 */
+            html {
+                animation: fouc-fix 5s steps(1);
+            }
+            @keyframes fouc-fix {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" /> <!-- favicon -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://kit.fontawesome.com/4d151777d8.js" crossorigin="anonymous"></script> <!-- font awesome -->
+        <script src="assets/js/script.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </body>
 </html>
