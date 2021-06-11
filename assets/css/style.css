@@ -635,37 +635,18 @@ button {
         grid-template-rows: auto;
     }
 
-    .slideshowGrid { 
-        display: grid;
-        grid-template-columns: 1vw 1fr 1vw;
-        grid-template-rows: auto;
-        grid-gap: 20px;
-    }
-
     .katGrid section {
         margin-bottom: 10px;
     }
 
-    .mySlides {
-        display: none;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+    .katBeskrivelse {
+        padding: 10px;
     }
 
-    .firstPic {
-        display: block;
+    .katPlejefamilie {
+        padding: 10px;
     }
 }
-/* 
-@media screen and (min-width: 813px) and (max-width: 1200px) {
-    .katGrid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-gap: 20px;
-    }
-}  */
 
 /* FORENINGEN */
 .foreningenGrid {
