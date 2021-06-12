@@ -520,7 +520,6 @@ function drawKatINoed() {
     }) //specifies the url to fetch() method with the API key
     .then(response => response.json()) //converts response to JSON object
     .then(billeder => { //passing data through arrow function
-        console.log(billeder);
         let text = "";
         text += `
         <h1>Kat i nød</h1>
