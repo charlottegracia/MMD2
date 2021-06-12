@@ -905,7 +905,7 @@ footer {
     font-style: italic;
 }
 
-#top {
+#backToTopButton {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -949,4 +949,8 @@ footer {
     bottom: 30px;
     left: 30px;
     z-index: 99;
+}
+/* FOUC (flash of unstyled content) KILDE: https://dev.to/markmercier/combatting-flashes-of-unstyled-content-k31 */
+html {
+    animation: none !important;
 }
