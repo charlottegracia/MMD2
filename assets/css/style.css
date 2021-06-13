@@ -875,6 +875,40 @@ button {
     margin: 0;
 }
 
+@media screen and (max-width: 812px) {
+    .katINoedGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .skipperOgJarlGrid {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        margin: auto;
+        display: block;
+    }
+
+    .dropdownContentKatINoed {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 813px) and (max-width: 1200px) {
+    .katINoedGrid {
+        grid-template-columns: 45% 45%;
+    }
+
+    .skipperOgJarlGrid {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        margin: auto;
+        display: block;
+    }
+
+    .dropdownContentKatINoed {
+        width: 90%;
+    }
+} 
+
 /* FOOTER */
 footer {
     background-color: var(--darkgreen);
