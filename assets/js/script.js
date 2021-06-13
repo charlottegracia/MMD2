@@ -285,7 +285,7 @@ function drawAdopter(data) {
                     <p><span class="boldText">Killinger og unge katte</span> formidles for kr. 1450,-</p>
                     <p><span class="boldText">Katte over 2 år</span> formidles for kr. 1050,- </p>
                     <p>Med i prisen følger et års støttemedlemsskab af foreningen (normalt kr. 275,- pr. år). </p>
-                    <p>Kattene formidles i takt med at de bliver klar til hjem. De annonceres på vores Facebook gruppe og på dba samt her på hjemmesiden under Katte som søger hjem</p>
+                    <p>Kattene formidles i takt med at de bliver klar til hjem. De annonceres på vores <a target="_blank" href="https://www.facebook.com/groups/720551148010976/" class="boldText adopterLinks">Facebook gruppe</a> og på <a target="_blank" href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/" class="boldText adopterLinks">dba</a> samt her på hjemmesiden under Katte som søger hjem</p>
                 </article>
                 <article class="white venteliste">
                     <h2 class="darkblueText">Vil du på ventelisten?</h2>
