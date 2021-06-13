@@ -398,6 +398,11 @@ article img {
     padding-top: 70px;
 }
 
+.adopterLinks {
+    color: var(--green);
+    text-decoration: none;
+}
+
 @media screen and (max-width: 812px) {
     .katteOverblikGrid {
         display: grid;
