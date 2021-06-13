@@ -141,6 +141,10 @@ function drawFooter() {
     text += `
         <h5> <a href="mailto:info@kattehjaelp.dk" class="mail whiteText">info@kattehjaelp.dk</a> | Konto: reg.: 5357 konto: 0246871 | CVR nr. 37805335</h5>
         <h5>Donationer modtages på Mobilepay 94686</h5>
+        <a href="https://www.facebook.com/Kattehjaelpen/"> <img class="social" src="assets/images/facebookside2.png" alt="facebookside"></a>
+        <a href="https://www.facebook.com/groups/720551148010976/"> <img class="social" src="assets/images/facebookgruppe2.png" alt="facebookgruppe"></a>
+        <a href="https://www.instagram.com/kattehjaelp_/"> <img class="social" src="assets/images/instagram2.png" alt="instagram"></a>
+        <a href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social" src="assets/images/dba2.png" alt="dba"></a>
     `;
     document.querySelector('footer').innerHTML = text;
 }
