@@ -74,7 +74,7 @@ function drawNav() {
     text += `
     <nav>
         <a href="index.html">
-            <img src="assets/images/NSK logo nyt.jpeg" alt="NSK Logo">
+            <img src="assets/images/NSKlogo.jpeg" alt="NSK Logo">
             <h1>Nordsjællands Kattehjælp</h1>
         </a>
         <ul>
@@ -119,7 +119,7 @@ function drawNav() {
             <a href="index.html?kontakt">Kontakt</a>
         </li>
     </ul>
-    <img class="social" src="assets/images/pilop.png" onclick="backToTop()" id="backToTopButton">
+    <img class="social" src="assets/images/pilop.png" alt="pil op" onclick="backToTop()" id="backToTopButton">
     <a target="_blank" href="https://www.facebook.com/Kattehjaelpen/"> <img class="social social1" src="assets/images/facebookside.png" alt="facebookside"></a>
     <a target="_blank" href="https://www.facebook.com/groups/720551148010976/"> <img class="social social2" src="assets/images/facebookgruppe.png" alt="facebookgruppe"></a>
     <a target="_blank" href="https://www.instagram.com/kattehjaelp_/"> <img class="social social3" src="assets/images/instagram.png" alt="instagram"></a>
@@ -165,7 +165,7 @@ function drawFrontpage(data) {
         text += `
         <h1>Nordsjællands Kattehjælp</h1>
         <section class="frontpageGrid">
-            <a class="blue" href="index.html?adopter">
+            <a class="hoverBlue blue" href="index.html?adopter">
                 <h2>Adopter</h2>
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
             </a>`
@@ -175,7 +175,7 @@ function drawFrontpage(data) {
             text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
         }
         text += `
-            <a class="darkgreen" href="index.html?stoet-os">
+            <a class="hoverDarkgreen darkgreen" href="index.html?stoet-os">
                 <h2>Støt os</h2>
                 <h3 class="greenText">Donation / Bliv medlem</h3>
             </a>
@@ -192,7 +192,7 @@ function drawFrontpage(data) {
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Kat"></a>`;
         }
         text += `
-            <a class="green" href="index.html?kat-i-noed">
+            <a class="hoverGreen green" href="index.html?kat-i-noed">
                 <h2>Kat i nød</h2>
                 <h3 class="darkgreenText">Kattehjælp / FIV</h3>
             </a>
@@ -204,7 +204,7 @@ function drawFrontpage(data) {
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede4.url}" alt="Kat"></a>`;
         }
         text += `
-            <a class="darkblue" href="index.html?foreningen">
+            <a class="hoverDarkblue darkblue" href="index.html?foreningen">
                 <h2>Foreningen</h2>
                 <h3 class="blueText">Vedtægter / Generalforsamling</h3>
             </a>
@@ -504,7 +504,7 @@ function drawStoetOs() {
                     <input class="white" type="text" placeholder="Adresse">
                     <input class="white" type="text" placeholder="Postnummer og by">
                     <textarea class="white" placeholder="Din besked..." style="height:100px"></textarea>
-                <button type="button">Send</button>
+                <button class="hoverGreen" type="button">Send</button>
             </form>
         </section>
     `;
@@ -705,7 +705,7 @@ function drawForeningen() {
                 </address>
                 <p>Generalforsamlingen var udsat fra maj til juli pga covid-19</p>
                 <p><span class="boldText">Fremmødte:</span> Joan Andersen, Annette Nielsen, Kirsten Hammer, Margit Rand, Birgit Bauer, Annette Bantz, Anne Glipstrup, Carli Hækkerup, Heidi Juel Hermansen, Rikke Falk Hansen og Anne Mau.</p>
-                <button class="darkgreen" type="button">Download PDF</button>
+                <button class="hoverDarkgreen darkgreen" type="button">Download PDF</button>
             </article>
             <img src="${billeder[0].acf.kat.url}" alt="${billeder[0].acf.kat.title}">
         </section>
@@ -772,7 +772,7 @@ function drawKontakt() {
                 <input class="test extrawhite" type="text" placeholder="Navn">
                 <input class="test extrawhite" type="text" placeholder="E-mail">
                 <textarea class="test extrawhite" placeholder="Din besked..." style="height:100px"></textarea>
-                <button class="blue" type="button">Send besked</button>
+                <button class="hoverBlue blue" type="button">Send besked</button>
             </form>   
         </section>
         <h2 class="gdprOverskrift greenText">GDPR (Dataforordningen)</h2>

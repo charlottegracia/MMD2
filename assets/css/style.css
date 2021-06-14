@@ -92,20 +92,10 @@ nav ul li a {
 	text-decoration: none;
     color: var(--white);
     display: inline-block;
-    /*border-bottom: solid 2px var(--green); */
+    border-bottom: solid 2px var(--green);
 }
 
-nav ul li a:after {
-    display: block;
-    content: '';
-    border-bottom: solid 2px #f2f2f2; 
-    transform: scaleX(0);  
-    transition: transform 300ms ease-in-out;
-}
-
-nav ul li a:hover:after { transform: scaleX(1); }
-
-/*nav li a:hover {border-bottom: solid 2px var(--white);} */
+nav li a:hover {border-bottom: solid 2px var(--white);}
 
 .dropdownMobile {
     background-color: var(--white);
@@ -937,6 +927,11 @@ footer {
 .whiteText      {color: var(--white);}
 .greyText       {color: var(--grey);}
 
+.hoverGreen:hover     {background-color: #71A166;}
+.hoverDarkgreen:hover {background-color: #576B59;}
+.hoverBlue:hover      {background-color: #70969A;}
+.hoverDarkblue:hover  {background-color: #306474;}
+
 .boldText {
     font-weight: bold;
 }
@@ -960,6 +955,13 @@ footer {
 .social {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.social:hover {
+    border-radius: 50%;
+    border: 2px solid var(--darkblue);
 }
 
 .social1 {
