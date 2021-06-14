@@ -141,10 +141,10 @@ function drawFooter() {
     text += `
         <h5> <a href="mailto:info@kattehjaelp.dk" class="mail whiteText">info@kattehjaelp.dk</a> | Konto: reg.: 5357 konto: 0246871 | CVR nr. 37805335</h5>
         <h5>Donationer modtages på Mobilepay 94686</h5>
-        <a href="https://www.facebook.com/Kattehjaelpen/"> <img class="social" src="assets/images/facebookside2.png" alt="facebookside"></a>
-        <a href="https://www.facebook.com/groups/720551148010976/"> <img class="social" src="assets/images/facebookgruppe2.png" alt="facebookgruppe"></a>
-        <a href="https://www.instagram.com/kattehjaelp_/"> <img class="social" src="assets/images/instagram2.png" alt="instagram"></a>
-        <a href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social" src="assets/images/dba2.png" alt="dba"></a>
+        <a href="https://www.facebook.com/Kattehjaelpen/"> <img class="social whiteBorderHover" src="assets/images/facebookside2.png" alt="facebookside"></a>
+        <a href="https://www.facebook.com/groups/720551148010976/"> <img class="social whiteBorderHover" src="assets/images/facebookgruppe2.png" alt="facebookgruppe"></a>
+        <a href="https://www.instagram.com/kattehjaelp_/"> <img class="social whiteBorderHover" src="assets/images/instagram2.png" alt="instagram"></a>
+        <a ref="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social whiteBorderHover" src="assets/images/dba2.png" alt="dba"></a>
     `;
     document.querySelector('footer').innerHTML = text;
 }
@@ -271,7 +271,7 @@ function drawAdopter(data) {
             text +=
             `<a href="index.html?kat?${kat.slug}">
                 <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
-                <section>
+                <section class="hoverBlue">
                     <p>${kat.acf.navn} - ${kat.acf.alder}</p>
                     <p>${kat.acf.inde_ude}</p>
                 </section>
@@ -309,7 +309,7 @@ function drawAdopter(data) {
                         <li>Du skal være fyldt 18 år og helst have lidt erfaring med katte/killinger.Dine eventuelt egne dyr skal kunne fungere socialt og harmonisk medplejekatte/killinger og du skal skal kunne fremvise gyldig attest på ateventuelt egne katte er vaccineret indenfor det seneste år samt at de er neutraliserede.</li>
                         <li>Det skal være tilladt at katten/killingen opholder sig i din bolig. Er derrestriktioner ift. art eller antal dyr der må være i din bolig, skalforeningen informeres om dette.</li>
                     </ul>
-                    <img src="${billeder[0].acf.billeder.stockbillede2.url}" alt="Nordsjællands Kattehjælp">
+                    <img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Nordsjællands Kattehjælp">
                     <img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Nordsjællands Kattehjælp">
                 </article>
                 <article class="kravDel2">
@@ -415,7 +415,7 @@ function drawCat(data) {
         text += `
             <a href="index.html?kat?${data[i].slug}">
                 <img src="${data[i].acf.billeder.billede1.url}" alt="${data[i].acf.navn}">
-                <section>
+                <section class="hoverBlue">
                     <p>${data[i].acf.navn} - ${data[i].acf.alder}</p>
                     <p>${data[i].acf.inde_ude}</p>
                 </section>
@@ -645,7 +645,7 @@ function drawKatINoed() {
         </section>
         <section>
             <p>I England findes der et ældre par der gennem livet har taget 80 fiv katte ind som deres egne (fiv shelter). De har udgivet en lille bog (booklet) med deres erfaringer omkring katte med fiv. Den er gratis og kan downloades her.</p>
-            <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs her hvorfor: http://www.fivcats.com/FIV/fiv_kittens.html</p>
+            <p>Nordsjællands Kattehjælp tester ikke automatisk killinger for Fiv. Læs <a href="http://www.fivcats.com/FIV/fiv_kittens.html" target="_blank" class="mail">her</a> hvorfor.</p>
             <section class="skipperOgJarlGrid">
                 <img src="${billeder[0].acf.skipper_og_jarl.billede1.url}" alt="${billeder[0].acf.oremaerke.name}">
                 <img src="${billeder[0].acf.skipper_og_jarl.billede2.url}" alt="${billeder[0].acf.oremaerke.name}">
@@ -705,7 +705,7 @@ function drawForeningen() {
                 </address>
                 <p>Generalforsamlingen var udsat fra maj til juli pga covid-19</p>
                 <p><span class="boldText">Fremmødte:</span> Joan Andersen, Annette Nielsen, Kirsten Hammer, Margit Rand, Birgit Bauer, Annette Bantz, Anne Glipstrup, Carli Hækkerup, Heidi Juel Hermansen, Rikke Falk Hansen og Anne Mau.</p>
-                <button class="hoverDarkgreen darkgreen" type="button">Download PDF</button>
+                <a href="assets/images/NSK.pdf" download="NSK vedtægter"><button class="hoverDarkgreen darkgreen" type="button">Download PDF</button></a>
             </article>
             <img src="${billeder[0].acf.kat.url}" alt="${billeder[0].acf.kat.title}">
         </section>

@@ -964,6 +964,11 @@ footer {
     border: 2px solid var(--darkblue);
 }
 
+.whiteBorderHover:hover {
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
 .social1 {
     position: fixed;
     bottom: 165px;
