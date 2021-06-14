@@ -123,7 +123,7 @@ function drawNav() {
     <a target="_blank" href="https://www.facebook.com/Kattehjaelpen/"> <img class="social social1" src="assets/images/facebookside.png" alt="facebookside"></a>
     <a target="_blank" href="https://www.facebook.com/groups/720551148010976/"> <img class="social social2" src="assets/images/facebookgruppe.png" alt="facebookgruppe"></a>
     <a target="_blank" href="https://www.instagram.com/kattehjaelp_/"> <img class="social social3" src="assets/images/instagram.png" alt="instagram"></a>
-    <a target="_blank" href="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social social4" src="assets/images/dba.png" alt="dba"></a>
+    <a target="_blank" href="https://www.dba.dk/saelger/privat/dba/1591203"> <img class="social social4" src="assets/images/dba.png" alt="dba"></a>
     `;
     document.querySelector('header').innerHTML = text;
 }
@@ -144,7 +144,7 @@ function drawFooter() {
         <a href="https://www.facebook.com/Kattehjaelpen/"> <img class="social whiteBorderHover" src="assets/images/facebookside2.png" alt="facebookside"></a>
         <a href="https://www.facebook.com/groups/720551148010976/"> <img class="social whiteBorderHover" src="assets/images/facebookgruppe2.png" alt="facebookgruppe"></a>
         <a href="https://www.instagram.com/kattehjaelp_/"> <img class="social whiteBorderHover" src="assets/images/instagram2.png" alt="instagram"></a>
-        <a ref="https://www.dba.dk/dyr/katte-og-tilbehoer/huskatte/reg-nordsjaelland/"> <img class="social whiteBorderHover" src="assets/images/dba2.png" alt="dba"></a>
+        <a ref="https://www.dba.dk/saelger/privat/dba/1591203"> <img class="social whiteBorderHover" src="assets/images/dba2.png" alt="dba"></a>
     `;
     document.querySelector('footer').innerHTML = text;
 }
@@ -306,20 +306,20 @@ function drawAdopter(data) {
                     <p>Vi søger primært plejefamilier, som er bosat i Nordsjælland og København og du skal være indstillet på at åbne dit hjem, for et besøg af en repræsentant fra foreningen. Før et eventuelt samarbejde indgås, så fremsendes der en kontrakt til underskrift med nedenstående punkter.</p>
                     <h3 class="greyText">Krav til vores plejefamilier:</h3>
                     <ol>
-                        <li>Du skal være fyldt 18 år og helst have lidt erfaring med katte/killinger.Dine eventuelt egne dyr skal kunne fungere socialt og harmonisk medplejekatte/killinger og du skal skal kunne fremvise gyldig attest på ateventuelt egne katte er vaccineret indenfor det seneste år samt at de er neutraliserede.</li>
-                        <li>Det skal være tilladt at katten/killingen opholder sig i din bolig. Er derrestriktioner ift. art eller antal dyr der må være i din bolig, skalforeningen informeres om dette.</li>
+                        <li>Du skal være fyldt 18 år og helst have lidt erfaring med katte/killinger. Dine eventuelt egne dyr skal kunne fungere socialt og harmonisk med plejekatte/killinger og du skal skal kunne fremvise gyldig attest på at eventuelt egne katte er vaccineret indenfor det seneste år samt at de er neutraliserede.</li>
+                        <li>Det skal være tilladt at katten/killingen opholder sig i din bolig. Er der restriktioner ift. art eller antal dyr der må være i din bolig, skal foreningen informeres om dette.</li>
                     </ul>
                     <img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Nordsjællands Kattehjælp">
                     <img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Nordsjællands Kattehjælp">
                 </article>
                 <article class="kravDel2">
                     <ol start="3">
-                        <li>Du skal som udgangspunkt have adgang til bil/kørsel ifm. dyrlægebesøg mv. Vi har frivillige der ofte kan hjælpe med kørsel,men dette kan ikke garanteres. Vi benytter primært vores fastedyrlæger i Espergærde og i Frederikssund.</li>
-                        <li>Du skal have mulighed for at isolere katten/killingen i et særskiltrum (evt. et badeværelse), som er adskilt for husets eventuelt andredyr de første dage af plejeperioden.</li>
-                        <li>Du skal være indstillet på at indrette din bolig, så den tilgodeser kattens/killingens behov: fri adgang til tørfoder, rent drikkevand,kradsetræ, kattebakke og flere forskellige gode ligge/gemmesteder. Katten/killingen må under <span class="boldText">ingen</span> omstændigheder komme ud!</li>
+                        <li>Du skal som udgangspunkt have adgang til bil/kørsel ifm. dyrlægebesøg mv. Vi har frivillige der ofte kan hjælpe med kørsel, men dette kan ikke garanteres. Vi benytter primært vores faste dyrlæger i Espergærde og i Frederikssund.</li>
+                        <li>Du skal have mulighed for at isolere katten/killingen i et særskilt rum (evt. et badeværelse), som er adskilt for husets eventuelt andre dyr de første dage af plejeperioden.</li>
+                        <li>Du skal være indstillet på at indrette din bolig, så den tilgodeser kattens/killingens behov: fri adgang til tørfoder, rent drikkevand, kradsetræ, kattebakke og flere forskellige gode ligge/gemmesteder. Katten/killingen må under <span class="boldText">ingen</span> omstændigheder komme ud!</li>
                         <li>Foreningen sørger for tørfoder, vådfoder, kattegrus, legetøj mv. (medmindre dette fravælges), men plejefamilien skal være indstillet på selv at afhente det på vores lager i Kvistgård eller Dronningmølle medmindre andet aftales. </li>
-                        <li>Foreningen afholder alle udgifter til dyrlæge samt loppe/ormekureog andre former for behandling. Den plejeansvarlige skal altidkontaktes, hvis plejeren vurderer et behov for dyrlægebesøg.Plejer skal løbende, holde den plejeansvarlige orienteret omhvordan det går med katten/killingen og rette henvendelse, hvisder opstår spørgsmål i plejeperioden</li>
-                        <li>Såfremt katten/killingen forårsager skader på plejefamiliens hjem,interiør eller på personer, vil alle eventuelle udgifter ifm. dettetilfalde plejefamilien selv. Der er tavshedspligt for plejefamilierne,vedr. forhold omkring de katte man får i pleje, samt ting der bliveraftalt I foreningens regi. Det er foreningen der alene står forformidling af plejekatten til dens nye hjem. Dette sker dog somudgangspunkt altid i samråd med plejer.</li>
+                        <li>Foreningen afholder alle udgifter til dyrlæge samt loppe/ormekure og andre former for behandling. Den plejeansvarlige skal altid kontaktes, hvis plejeren vurderer et behov for dyrlægebesøg. Plejer skal løbende, holde den plejeansvarlige orienteret om hvordan det går med katten/killingen og rette henvendelse, hvis der opstår spørgsmål i plejeperioden</li>
+                        <li>Såfremt katten/killingen forårsager skader på plejefamiliens hjem, interiør eller på personer, vil alle eventuelle udgifter ifm. dette tilfalde plejefamilien selv. Der er tavshedspligt for plejefamilierne, vedr. forhold omkring de katte man får i pleje, samt ting der bliver aftalt I foreningens regi. Det er foreningen der alene står for formidling af plejekatten til dens nye hjem. Dette sker dog som udgangspunkt altid i samråd med plejer.</li>
                     </ul>
                 </article>
             </article>`;
