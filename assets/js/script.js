@@ -60,13 +60,10 @@ function createPage() {
             drawFrontpage(data);
         }
         drawFooter();
-        //js_Load();
     })
     .catch(error => {
         console.log(error); // logs any errors
     })
-
-    //js_Load();
 }
 
 function drawNav() {
