@@ -317,7 +317,7 @@ main section a img {
 .katteOverblikGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 250px;
+    grid-template-rows: auto;
     grid-gap: 20px;
 }
 
@@ -995,6 +995,24 @@ footer {
     bottom: 30px;
     left: 30px;
     z-index: 99;
+}
+
+.flexAdopter {
+    display: flex;
+    margin: 0;
+}
+
+.flexAdopter section {
+    padding-right: 25px;
+}
+
+.flexAdopter h4 {
+    margin: 0;
+}
+
+select {
+	padding: 10px;
+	width: 16vw;
 }
 
 /* FOUC (flash of unstyled content) KILDE: https://dev.to/markmercier/combatting-flashes-of-unstyled-content-k31 */

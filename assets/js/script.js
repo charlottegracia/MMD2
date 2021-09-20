@@ -4,6 +4,7 @@ const apiUserCredentials = {
     password: "API-key-1234#!",
 };
 
+let katte;
 const katId = 27;
 const stockImagesId = 28;
 const samarbejdspartnereId = 29;
@@ -20,16 +21,16 @@ function getToken() {
             'Content-Type': 'application/JSON'
         }
     })
-    .then(response => { 
-        return response.json(); //converts response to JSON and returns it
-    })
-    .then(response => {
-        window.localStorage.setItem("authToken", response.token) //saves response.token in localStorage
-        createPage();
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+        .then(response => {
+            return response.json(); //converts response to JSON and returns it
+        })
+        .then(response => {
+            window.localStorage.setItem("authToken", response.token) //saves response.token in localStorage
+            createPage();
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function createPage() {
@@ -39,31 +40,32 @@ function createPage() {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(data => { //passing data through arrow function
-        drawNav();
-        if (url.indexOf('adopter') > -1) {
-            drawAdopter(data);
-        } else if (url.indexOf('kat-i-noed') > -1) {
-            drawKatINoed();
-        } else if (url.indexOf('kat') > -1) {
-            drawCat(data);
-        } else if (url.indexOf('stoet-os') > -1) {
-            drawStoetOs();
-        } else if (url.indexOf('foreningen') > -1) {
-            drawForeningen();
-        } else if (url.indexOf('samarbejde') > -1) {
-            drawSamarbejdspartnere();
-        } else if (url.indexOf('kontakt') > -1) {
-            drawKontakt();
-        } else {
-            drawFrontpage(data);
-        }
-        drawFooter();
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+        .then(response => response.json()) //converts response to JSON object
+        .then(data => { //passing data through arrow function
+            drawNav();
+            katte = data;
+            if (url.indexOf('adopter') > -1) {
+                drawAdopter(data);
+            } else if (url.indexOf('kat-i-noed') > -1) {
+                drawKatINoed();
+            } else if (url.indexOf('kat') > -1) {
+                drawCat(data);
+            } else if (url.indexOf('stoet-os') > -1) {
+                drawStoetOs();
+            } else if (url.indexOf('foreningen') > -1) {
+                drawForeningen();
+            } else if (url.indexOf('samarbejde') > -1) {
+                drawSamarbejdspartnere();
+            } else if (url.indexOf('kontakt') > -1) {
+                drawKontakt();
+            } else {
+                drawFrontpage(data);
+            }
+            drawFooter();
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function drawNav() {
@@ -141,7 +143,7 @@ function drawFooter() {
         <a href="https://www.facebook.com/Kattehjaelpen/"> <img class="social whiteBorderHover" src="assets/images/facebookside2.png" alt="facebookside"></a>
         <a href="https://www.facebook.com/groups/720551148010976/"> <img class="social whiteBorderHover" src="assets/images/facebookgruppe2.png" alt="facebookgruppe"></a>
         <a href="https://www.instagram.com/kattehjaelp_/"> <img class="social whiteBorderHover" src="assets/images/instagram2.png" alt="instagram"></a>
-        <a ref="https://www.dba.dk/saelger/privat/dba/1591203"> <img class="social whiteBorderHover" src="assets/images/dba2.png" alt="dba"></a>
+        <a href="https://www.dba.dk/saelger/privat/dba/1591203"> <img class="social whiteBorderHover" src="assets/images/dba2.png" alt="dba"></a>
     `;
     document.querySelector('footer').innerHTML = text;
 }
@@ -157,61 +159,61 @@ function drawFrontpage(data) {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(billeder => { //passing data through arrow function
-        text += `
+        .then(response => response.json()) //converts response to JSON object
+        .then(billeder => { //passing data through arrow function
+            text += `
         <h1>Nordsjællands Kattehjælp</h1>
         <section class="frontpageGrid">
             <a class="hoverBlue blue" href="index.html?adopter">
                 <h2>Adopter</h2>
                 <h3 class="darkblueText">Adoption / Bliv plejer</h3>
             </a>`
-        if (data[0]) {
-            text += `<a href="index.html?kat?${data[0].slug}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
-        } else {
-            text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
-        }
-        text += `
+            if (data[0]) {
+                text += `<a href="index.html?kat?${data[0].slug}"><img src="${data[0].acf.billeder.billede1.url}" alt="${data[0].acf.navn}"></a>`;
+            } else {
+                text += `<a><img src="${billeder[0].acf.billeder.stockbillede1.url}" alt="Kat></a>`;
+            }
+            text += `
             <a class="hoverDarkgreen darkgreen" href="index.html?stoet-os">
                 <h2>Støt os</h2>
                 <h3 class="greenText">Donation / Bliv medlem</h3>
             </a>
         `;
-        if (data[1]) {
-            text += `<a href="index.html?kat?${data[1].slug}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
-        } else {
-            text += `<a><img src="${billeder[0].acf.billeder.stockbillede2.url}" alt="Kat></a>`;
-        }
-        if (data[2]) {
-            text += `<a href="index.html?kat?${data[2].slug}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
-        } else {
-            text += `
+            if (data[1]) {
+                text += `<a href="index.html?kat?${data[1].slug}"><img src="${data[1].acf.billeder.billede1.url}" alt="${data[1].acf.navn}"></a>`;
+            } else {
+                text += `<a><img src="${billeder[0].acf.billeder.stockbillede2.url}" alt="Kat></a>`;
+            }
+            if (data[2]) {
+                text += `<a href="index.html?kat?${data[2].slug}"><img src="${data[2].acf.billeder.billede1.url}" alt="${data[2].acf.navn}"></a>`;
+            } else {
+                text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede3.url}" alt="Kat"></a>`;
-        }
-        text += `
+            }
+            text += `
             <a class="hoverGreen green" href="index.html?kat-i-noed">
                 <h2>Kat i nød</h2>
                 <h3 class="darkgreenText">Kattehjælp / FIV</h3>
             </a>
         `;
-        if (data[3]) {
-            text += `<a href="index.html?kat?${data[3].slug}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
-        } else {
-            text += `
+            if (data[3]) {
+                text += `<a href="index.html?kat?${data[3].slug}"><img src="${data[3].acf.billeder.billede1.url}" alt="${data[3].acf.navn}"></a>`;
+            } else {
+                text += `
             <a href="#"><img src="${billeder[0].acf.billeder.stockbillede4.url}" alt="Kat"></a>`;
-        }
-        text += `
+            }
+            text += `
             <a class="hoverDarkblue darkblue" href="index.html?foreningen">
                 <h2>Foreningen</h2>
                 <h3 class="blueText">Vedtægter / Generalforsamling</h3>
             </a>
         </section
         `;
-    document.querySelector('main').innerHTML = text;
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+            document.querySelector('main').innerHTML = text;
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function drawSamarbejdspartnere() {
@@ -224,26 +226,26 @@ function drawSamarbejdspartnere() {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(samarbejdspartnere => { //passing data through arrow function
-        let text = "";
-        text += `
+        .then(response => response.json()) //converts response to JSON object
+        .then(samarbejdspartnere => { //passing data through arrow function
+            let text = "";
+            text += `
             <h1>Samarbejde</h1>
             <h2>Samarbejdspartnere og sponsorer</h2>`;
-        text += `<section class="samarbejdsgrid">`;
-        samarbejdspartnere.forEach(partner => {
-            text += `
+            text += `<section class="samarbejdsgrid">`;
+            samarbejdspartnere.forEach(partner => {
+                text += `
                 <a href="${partner.acf.samarbejdspartner.firmalink}" target="_blank">
                     <img src="${partner.acf.samarbejdspartner.firmalogo.url}" alt="${partner.acf.samarbejdspartner.firmanavn}">
                 </a>
             `;
-        });
-        text += `</section>`;
-        document.querySelector('main').innerHTML = text;
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+            });
+            text += `</section>`;
+            document.querySelector('main').innerHTML = text;
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function drawAdopter(data) {
@@ -252,31 +254,52 @@ function drawAdopter(data) {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(billeder => { //passing data through arrow function
-        let title = "<title>Adopter - Nordsjællands Kattehjælp</title>";
-        document.querySelector("head").innerHTML += title;
-        let metaText = `<meta name="description" content="Vi formidler kun katte og killinger, der er steriliseret/kastreret, øremærket, chippet samt ormebehandlet og vaccineret 1. gang.">`
-        document.querySelector("head").innerHTML += metaText;
-        let text = "";
-        text += `
+        .then(response => response.json()) //converts response to JSON object
+        .then(billeder => { //passing data through arrow function
+            let title = "<title>Adopter - Nordsjællands Kattehjælp</title>";
+            document.querySelector("head").innerHTML += title;
+            let metaText = `<meta name="description" content="Vi formidler kun katte og killinger, der er steriliseret/kastreret, øremærket, chippet samt ormebehandlet og vaccineret 1. gang.">`
+            document.querySelector("head").innerHTML += metaText;
+            let text = "";
+            console.log(data);
+            text += `
         <h1>Adopter</h1>
         <h2>Katte som søger hjem</h2>
+        <section class="flexAdopter">
+                <section>
+                    <h4>Miljø</h4>
+                    <select class="miljo" name="miljo">
+                        <option value="Alle">Alle</option>
+                        <option value="Indekat">Indekat</option>
+                        <option value="Udekat">Udekat</option>
+                        <option value="Inde-/udekat">Inde-/udekat</option>
+                    </select>
+                </section>
+                <section>
+                    <h4>Køn</h4>
+                    <select class="kon" name="kon">
+                        <option value="Alle">Alle</option>
+                        <option value="Hunkat">Hunkat</option>
+                        <option value="Hankat">Hankat</option>
+                    </select>
+                </section>
+            </section>
+            <div class="result"></div>
         <section class="katteOverblikGrid">
         `;
-        data.forEach(kat => {
-            text +=
-            `<a href="index.html?kat?${kat.slug}">
+            data.forEach(kat => {
+                text +=
+                    `<a href="index.html?kat?${kat.slug}">
                 <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
                 <section class="hoverBlue">
                     <p>${kat.acf.navn} - ${kat.acf.alder}</p>
-                    <p>${kat.acf.inde_ude}</p>
+                    <p>${kat.acf.inde_ude} - ${kat.acf.kon}</p>
                 </section>
             </a>
             `;
-        });
-        text += `</section>`;
-        text += `
+            });
+            text += `</section>`;
+            text += `
         <article class="adoptionAfKatte">
             <article>
                 <h2 class="greenText">Adoption af katte</h2>
@@ -320,11 +343,88 @@ function drawAdopter(data) {
                     </ul>
                 </article>
             </article>`;
-        document.querySelector('main').innerHTML = text;
+            document.querySelector('main').innerHTML = text;
+            const selectMiljo = document.querySelector('.miljo');
+            const selectKon = document.querySelector('.kon');
+
+            selectMiljo.addEventListener('change', (event) => {
+                sortByEnvironment(event);
+            });
+
+            selectKon.addEventListener('change', (event) => {
+                sortByGender(event);
+            });
+
         })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
+}
+
+function sortByEnvironment(event) {
+    let result;
+    let text = "";
+    const currentGender = document.querySelector('.kon').value;
+    if (event.target.value === 'Indekat') {
+        result = katte.filter(element => (currentGender === "Alle" || element.acf.kon === currentGender) && element.acf.inde_ude === 'Indekat');
+    } else if (event.target.value === "Udekat") {
+        result = katte.filter(element => (currentGender === "Alle" || element.acf.kon === currentGender) && element.acf.inde_ude === 'Udekat');
+    } else if (event.target.value === "Inde-/udekat") {
+        result = katte.filter(element => (currentGender === "Alle" || element.acf.kon === currentGender) && element.acf.inde_ude === 'Inde-/udekat');
+    } else if (event.target.value === "Alle") {
+        result = katte.filter(element => currentGender === "Alle" || element.acf.kon === currentGender);
+    }
+    
+    if (result.length > 0) {
+        result.forEach(kat => {
+            text +=
+            `<a href="index.html?kat?${kat.slug}">
+                <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
+                <section class="hoverBlue">
+                    <p>${kat.acf.navn} - ${kat.acf.alder}</p>
+                    <p>${kat.acf.inde_ude} - ${kat.acf.kon}</p>
+                </section>
+            </a>
+            `;
+        });
+    } else {
+        text +=
+            `<p>Ingen katte opfylder kriterierne.</p>
+            `;
+    }
+    document.querySelector('.katteOverblikGrid').innerHTML = text;
+}
+
+function sortByGender(event) {
+    let result;
+    let text = "";
+    const currentEnvironment = document.querySelector('.miljo').value;
+    if (event.target.value === 'Hunkat') {
+        result = katte.filter(element => (currentEnvironment === "Alle" || element.acf.inde_ude === currentEnvironment) && element.acf.kon === 'Hunkat');
+    } else if (event.target.value === "Hankat") {
+        result = katte.filter(element => (currentEnvironment === "Alle" || element.acf.inde_ude === currentEnvironment) && element.acf.kon === 'Hankat');
+    } else if (event.target.value === "Alle") {
+        result = katte.filter(element => currentEnvironment === "Alle" || element.acf.inde_ude === currentEnvironment);
+    }
+
+    if (result.length > 0) {
+        result.forEach(kat => {
+            text +=
+            `<a href="index.html?kat?${kat.slug}">
+                <img src="${kat.acf.billeder.billede1.url}" alt="${kat.acf.navn}">
+                <section class="hoverBlue">
+                    <p>${kat.acf.navn} - ${kat.acf.alder}</p>
+                    <p>${kat.acf.inde_ude} - ${kat.acf.kon}</p>
+                </section>
+            </a>
+            `;
+        });
+    } else {
+        text +=
+            `<p>Ingen katte opfylder kriterierne.</p>
+            `;
+    }
+    document.querySelector('.katteOverblikGrid').innerHTML = text;
 }
 
 function drawCat(data) {
@@ -342,11 +442,11 @@ function drawCat(data) {
             <h1>${kat.acf.navn}</h1>
             <section class="katGrid">
                 `;
-                if (kat.acf.billeder.billede2) {
-                    text +=`
+            if (kat.acf.billeder.billede2) {
+                text += `
                     <section class="slideshowGrid"> 
                     <i class="ikon fas fa-chevron-left" onclick="plusDivs(-1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self --> `;
-                }
+            }
             text += `<section>`;
             if (kat.acf.billeder.billede1 != false) {
                 text += `<img class="firstPic mySlides" src="${kat.acf.billeder.billede1.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
@@ -360,11 +460,11 @@ function drawCat(data) {
             if (kat.acf.billeder.billede4 != false) {
                 text += `<img class="mySlides" src="${kat.acf.billeder.billede4.url}"></img>`; // Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self
             }
-            
+
             text += `
                 </section>`;
             if (kat.acf.billeder.billede2) {
-                text +=`
+                text += `
                 <i class="ikon fas fa-chevron-right" onclick="plusDivs(1)"></i> <!-- Kilde: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self -->
                 </section>`;
             }
@@ -390,14 +490,14 @@ function drawCat(data) {
                 </article>
                 <article class="katPlejefamilie">
                 `;
-                if (kat.acf.plejefamilie_navne != "" && kat.acf.plejefamilien_fortaeller != "") {
-                    text += `<h4>Plejefamilien (${kat.acf.plejefamilie_navne}) fortæller</h4>
+            if (kat.acf.plejefamilie_navne != "" && kat.acf.plejefamilien_fortaeller != "") {
+                text += `<h4>Plejefamilien (${kat.acf.plejefamilie_navne}) fortæller</h4>
                     <p>${kat.acf.plejefamilien_fortaeller}</p>`;
-                } else if (kat.acf.plejefamilie_navne == "" && kat.acf.plejefamilien_fortaeller != "") {
-                    text += `<h4>Plejefamilien fortæller</h4>
+            } else if (kat.acf.plejefamilie_navne == "" && kat.acf.plejefamilien_fortaeller != "") {
+                text += `<h4>Plejefamilien fortæller</h4>
                     <p>${kat.acf.plejefamilien_fortaeller}</p>`;
-                }
-                text += `
+            }
+            text += `
                 </article>
             </section>
             `;
@@ -441,10 +541,10 @@ function showDivs(n) {
         slideIndex = x.length
     }
     for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
+        x[i].style.display = "none";
     }
     if (x.length > 0) {
-        x[slideIndex-1].style.display = "block";  
+        x[slideIndex - 1].style.display = "block";
     }
 }
 
@@ -519,10 +619,10 @@ function drawKatINoed() {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(billeder => { //passing data through arrow function
-        let text = "";
-        text += `
+        .then(response => response.json()) //converts response to JSON object
+        .then(billeder => { //passing data through arrow function
+            let text = "";
+            text += `
         <h1>Kat i nød</h1>
         <section class="katINoedGrid">
         <section>
@@ -651,11 +751,11 @@ function drawKatINoed() {
         </section>
     </section>
         `;
-        document.querySelector('main').innerHTML = text;
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+            document.querySelector('main').innerHTML = text;
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function drawForeningen() {
@@ -668,10 +768,10 @@ function drawForeningen() {
             'Authorization': `Bearer ${window.localStorage.getItem("authToken")}`
         }
     }) //specifies the url to fetch() method with the API key
-    .then(response => response.json()) //converts response to JSON object
-    .then(billeder => { //passing data through arrow function
-        let text = "";
-        text += `
+        .then(response => response.json()) //converts response to JSON object
+        .then(billeder => { //passing data through arrow function
+            let text = "";
+            text += `
         <h1>Foreningen</h1>
         <section class="foreningenGrid">
             <article class="white">
@@ -739,11 +839,11 @@ function drawForeningen() {
             </section>
         </section>
         `;
-        document.querySelector('main').innerHTML = text;
-    })
-    .catch(error => {
-        console.log(error); // logs any errors
-    })
+            document.querySelector('main').innerHTML = text;
+        })
+        .catch(error => {
+            console.log(error); // logs any errors
+        })
 }
 
 function drawKontakt() {
@@ -845,10 +945,10 @@ function dropdownKatiNoed(n) {
         document.getElementById("katINoed5").classList.toggle('hide');
     } else if (n == 6) {
         document.getElementById("katINoed6").classList.toggle('hide');
-    } 
+    }
 }
 
-window.onscroll = function() {scroll()};
+window.onscroll = function () { scroll() };
 
 function scroll() {
     let button = document.getElementById("backToTopButton");
@@ -860,6 +960,6 @@ function scroll() {
 }
 
 function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
